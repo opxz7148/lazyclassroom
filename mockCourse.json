@@ -1,0 +1,596 @@
+{
+  "courses": [
+    {
+      "updateTime": "2025-08-07T05:43:51.615Z", 
+      "guardiansEnabled": false, 
+      "name": "ISP - Individual Software Development Process", 
+      "alternateLink": "https://classroom.google.com/c/NzczMzg5ODgwOTY2", 
+      "enrollmentCode": "qnasgaau", 
+      "section": "01219241-65/01219245-60, Academic Year 2568", 
+      "teacherFolder": {
+        "alternateLink": "https://drive.google.com/drive/folders/10tVdM4d8X5Z50WCqrNwXTsNFKtDNN_9jBEkfvfMyUiKqoW3DhUVnE-F8MStdJ7erZEMjsNWZ", 
+        "id": "10tVdM4d8X5Z50WCqrNwXTsNFKtDNN_9jBEkfvfMyUiKqoW3DhUVnE-F8MStdJ7erZEMjsNWZ", 
+        "title": "ISP - Individual Software Development Process 01219241-65/01219245-60 01219241-65/01219245-60, Academic Year 2568"
+      }, 
+      "creationTime": "2025-07-29T03:31:03.663Z", 
+      "teacherGroupEmail": "ISP_Individual_Software_Development_Process_01219241_65_01219245_60_01219241_65_01219245_60_Academic_Year_2568_teachers_7e11757d@ku.th", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "calendarId": "c_classroom7c48a0fb@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "courseGroupEmail": "ISP_Individual_Software_Development_Process_01219241_65_01219245_60_01219241_65_01219245_60_Academic_Year_2568_65d8dacb@ku.th", 
+      "ownerId": "105454855262673028079", 
+      "id": "773389880966"
+    }, 
+    {
+      "updateTime": "2025-12-11T10:01:59.946Z", 
+      "name": "0129243-65 Principle of Software Design (Dec 2025)", 
+      "alternateLink": "https://classroom.google.com/c/ODIxNTEwMDk0MzEz", 
+      "courseGroupEmail": "0129243_65_Principle_of_Software_Design_Dec_2025_450_03bc8ae7@ku.th", 
+      "section": "450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-12-11T10:01:59.946Z", 
+      "teacherGroupEmail": "0129243_65_Principle_of_Software_Design_Dec_2025_450_teachers_48d6ae6a@ku.th", 
+      "calendarId": "c_classroom73903200@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "113067749659384347177", 
+      "id": "821510094313"
+    }, 
+    {
+      "updateTime": "2025-08-08T11:29:54.797Z", 
+      "name": "01385361 \u0e15\u0e49\u0e19 68", 
+      "alternateLink": "https://classroom.google.com/c/Nzk1MDM2MzEzMDY1", 
+      "courseGroupEmail": "01385361_68_450_0e76e0a3@ku.th", 
+      "section": "\u0e2b\u0e21\u0e39\u0e48 450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-08-08T11:29:54.797Z", 
+      "teacherGroupEmail": "01385361_68_450_teachers_30593e4f@ku.th", 
+      "calendarId": "c_classroom8c254dc2@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "102132023266801721769", 
+      "id": "795036313065"
+    }, 
+    {
+      "updateTime": "2025-08-15T08:08:40.303Z", 
+      "name": "01219313 Communication Skills for Software and Knowledge Engineers (Presentation)", 
+      "alternateLink": "https://classroom.google.com/c/Nzg0ODA4MDY0NjA3", 
+      "courseGroupEmail": "01219313_Communication_Skills_for_Software_and_Knowledge_Engineers_Presentation_2ac7c573@ku.th", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-05-24T18:19:21.854Z", 
+      "teacherGroupEmail": "01219313_Communication_Skills_for_Software_and_Knowledge_Engineers_Presentation_teachers_6b95154d@ku.th", 
+      "calendarId": "c_classroom25a338fb@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "115274738166476665488", 
+      "id": "784808064607"
+    }, 
+    {
+      "updateTime": "2025-10-01T06:00:06.333Z", 
+      "name": "01219325 SW Dev Security", 
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy", 
+      "courseGroupEmail": "01219325_SW_Dev_Security_1st_Semester_2025_2ad0d237@ku.th", 
+      "section": "1st Semester, 2025", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-08-05T09:29:41.608Z", 
+      "teacherGroupEmail": "01219325_SW_Dev_Security_1st_Semester_2025_teachers_a0adf849@ku.th", 
+      "calendarId": "c_classroomc6ebf30a@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "109565533686009791405", 
+      "id": "791077055722"
+    }, 
+    {
+      "updateTime": "2025-08-06T17:37:47.130Z", 
+      "description": "FRI 13.00-16.00", 
+      "alternateLink": "https://classroom.google.com/c/NzkxMjMxNzM3ODkx", 
+      "courseGroupEmail": "01177142_68_SEC_EUD4_503_FRI_13_00_16_00_e9420bec@ku.th", 
+      "section": "SEC \u0e27\u0e34\u0e28\u0e27\u0e30\u0e2f \u0e2d\u0e34\u0e19\u0e40\u0e15\u0e2d\u0e23\u0e4c (EUD4-503) FRI 13.00-16.00", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-08-06T09:42:06.063Z", 
+      "teacherGroupEmail": "01177142_68_SEC_EUD4_503_FRI_13_00_16_00_teachers_3a711b01@ku.th", 
+      "calendarId": "c_classroom5fccfc89@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "114571122250181537523", 
+      "id": "791231737891", 
+      "descriptionHeading": "01177142 \u0e2a\u0e38\u0e19\u0e17\u0e23\u0e35\u0e22\u0e30\u0e43\u0e19\u0e01\u0e32\u0e23\u0e40\u0e23\u0e35\u0e22\u0e19\u0e23\u0e39\u0e49\u0e15\u0e25\u0e2d\u0e14\u0e0a\u0e35\u0e27\u0e34\u0e15 \u0e2b\u0e21\u0e39\u0e48\u0e40\u0e23\u0e35\u0e22\u0e19 2", 
+      "name": "01177142 \u0e15\u0e49\u0e19 68"
+    }, 
+    {
+      "updateTime": "2025-12-11T09:11:44.892Z", 
+      "name": "01219346-65 Collaborative Software Process and Project Management (2025)", 
+      "alternateLink": "https://classroom.google.com/c/Nzg5ODgwNTgzMTky", 
+      "courseGroupEmail": "01219346_65_Collaborative_Software_Process_and_Project_Management_2025_01219346_65_227f1f6a@ku.th", 
+      "section": "01219346-65", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-07-23T02:27:51.054Z", 
+      "teacherGroupEmail": "01219346_65_Collaborative_Software_Process_and_Project_Management_2025_01219346_65_teachers_fffef478@ku.th", 
+      "calendarId": "c_classroom8daf73b9@group.calendar.google.com", 
+      "courseState": "ARCHIVED", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "113067749659384347177", 
+      "id": "789880583192"
+    }, 
+    {
+      "updateTime": "2025-09-12T04:30:02.910Z", 
+      "name": "68/1 01204461 AI", 
+      "alternateLink": "https://classroom.google.com/c/Nzk0ODQyNzI2NDI1", 
+      "courseGroupEmail": "68_1_01204461_AI_450_Tu_13_16_8fe8f228@ku.th", 
+      "section": "450: Tu 13-16", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-08-04T12:38:08.614Z", 
+      "teacherGroupEmail": "68_1_01204461_AI_450_Tu_13_16_teachers_32e210c7@ku.th", 
+      "calendarId": "c_classrooma1529a92@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "115636970878233548373", 
+      "id": "794842726425"
+    }, 
+    {
+      "updateTime": "2025-10-06T15:59:44.934Z", 
+      "room": "E11-S603", 
+      "alternateLink": "https://classroom.google.com/c/Nzk0NjE2MzUwNzc0", 
+      "courseGroupEmail": "01219366_Knowledge_Engineering_450_7fd5490c@ku.th", 
+      "section": "450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-07-30T16:56:26.571Z", 
+      "teacherGroupEmail": "01219366_Knowledge_Engineering_450_teachers_6c386693@ku.th", 
+      "calendarId": "c_classroom25f651e8@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "100002172345040676147", 
+      "id": "794616350774", 
+      "name": "01219366 Knowledge Engineering [2025]"
+    }, 
+    {
+      "updateTime": "2025-08-01T07:49:54.102Z", 
+      "name": "01219243-65 Principles of Software Design", 
+      "alternateLink": "https://classroom.google.com/c/NzQzNjA4NDU2NzUw", 
+      "courseGroupEmail": "01219243_65_Principles_of_Software_Design_450_8aee9f55@ku.th", 
+      "section": "450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-01-06T01:40:34.399Z", 
+      "teacherGroupEmail": "01219243_65_Principles_of_Software_Design_450_teachers_364f078f@ku.th", 
+      "calendarId": "c_classroom83ee3361@group.calendar.google.com", 
+      "courseState": "ARCHIVED", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "113067749659384347177", 
+      "id": "743608456750"
+    }, 
+    {
+      "updateTime": "2025-01-10T02:49:13.696Z", 
+      "name": "01999213", 
+      "alternateLink": "https://classroom.google.com/c/NzQ0NTA5MjczMDg2", 
+      "courseGroupEmail": "01999213_450_992f2dd0@ku.th", 
+      "section": "450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-01-10T02:46:49.587Z", 
+      "teacherGroupEmail": "01999213_450_teachers_98ad94a0@ku.th", 
+      "calendarId": "c_classroom7d6f1caf@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "113709740418546650081", 
+      "id": "744509273086"
+    }, 
+    {
+      "updateTime": "2025-01-08T03:41:34.170Z", 
+      "room": "OCS806", 
+      "alternateLink": "https://classroom.google.com/c/NzQ0MDcxNDk0MTQy", 
+      "courseGroupEmail": "67_2_01219367_65_450_e5bacef2@ku.th", 
+      "section": "450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-01-08T03:40:23.259Z", 
+      "teacherGroupEmail": "67_2_01219367_65_450_teachers_33232ef8@ku.th", 
+      "calendarId": "c_classroomc4b67f5f@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "110504674877076801025", 
+      "id": "744071494142", 
+      "name": "67-2-01219367-65-60"
+    }, 
+    {
+      "updateTime": "2025-01-07T09:06:26.900Z", 
+      "name": "67-2: 01219343 Software Testing", 
+      "alternateLink": "https://classroom.google.com/c/NzMzNjY1NTgwOTMx", 
+      "courseGroupEmail": "67_2_01219343_Software_Testing_323a9d9a@ku.th", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-01-07T09:06:26.900Z", 
+      "teacherGroupEmail": "67_2_01219343_Software_Testing_teachers_dbf9a071@ku.th", 
+      "calendarId": "c_classroomf9cf4fba@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "109930161871471092805", 
+      "id": "733665580931"
+    }, 
+    {
+      "updateTime": "2025-01-05T14:17:06.302Z", 
+      "name": "01219222-2024 SKE Com Sys (2024)", 
+      "alternateLink": "https://classroom.google.com/c/NzQzNTU3NTQzODQw", 
+      "courseGroupEmail": "01219222_2024_SKE_Com_Sys_2024_450_8849a468@ku.th", 
+      "section": "450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2025-01-05T14:17:06.302Z", 
+      "teacherGroupEmail": "01219222_2024_SKE_Com_Sys_2024_450_teachers_e40b0fbd@ku.th", 
+      "calendarId": "c_classroom7fc50726@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "SHOW_TEACHERS_ONLY", 
+        "calculationType": "WEIGHTED_CATEGORIES", 
+        "gradeCategories": [
+          {
+            "defaultGradeDenominator": 100, 
+            "id": "671031309037", 
+            "weight": 50000, 
+            "name": "CN-Lab"
+          }, 
+          {
+            "defaultGradeDenominator": 100, 
+            "id": "671031309038", 
+            "weight": 200000, 
+            "name": "CN-Assignment"
+          }, 
+          {
+            "defaultGradeDenominator": 100, 
+            "id": "671031309039", 
+            "weight": 250000, 
+            "name": "CN-MidtermExam"
+          }, 
+          {
+            "defaultGradeDenominator": 100, 
+            "id": "671031309040", 
+            "weight": 200000, 
+            "name": "PR-Lab"
+          }, 
+          {
+            "defaultGradeDenominator": 100, 
+            "id": "756220718104", 
+            "weight": 300000, 
+            "name": "PR-Exam"
+          }
+        ]
+      }, 
+      "ownerId": "103459931655688093646", 
+      "id": "743557543840", 
+      "descriptionHeading": "219222/219223 Introduction to Computer Systems 2023 450"
+    }, 
+    {
+      "updateTime": "2025-11-22T13:28:36.959Z", 
+      "name": "DAQ 2024/2", 
+      "alternateLink": "https://classroom.google.com/c/NzQyMDI4MTI2MDU3", 
+      "courseGroupEmail": "DAQ_2024_2_Section_450_2d862a9e@ku.th", 
+      "section": "Section 450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2024-12-18T01:39:55.203Z", 
+      "teacherGroupEmail": "DAQ_2024_2_Section_450_teachers_25ee3fc1@ku.th", 
+      "calendarId": "c_classroom268e2cf8@group.calendar.google.com", 
+      "courseState": "ARCHIVED", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "109702028035467063535", 
+      "id": "742028126057"
+    }, 
+    {
+      "updateTime": "2024-09-06T06:18:29.514Z", 
+      "name": "[IUP-2567]01219224 Computer Network Architecture & Programming 2024", 
+      "alternateLink": "https://classroom.google.com/c/NzAzMTA2NDIyNzYy", 
+      "courseGroupEmail": "IUP_2567_01204224_Computer_Network_2024_450_2828de98@ku.th", 
+      "section": "450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2024-08-08T09:29:39.024Z", 
+      "teacherGroupEmail": "IUP_2567_01204224_Computer_Network_2024_450_teachers_cea31fd1@ku.th", 
+      "calendarId": "c_classroomc819334c@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "114270309110811980408", 
+      "id": "703106422762", 
+      "descriptionHeading": "[IUP-2567]01204224 Computer Network 2024 450"
+    }, 
+    {
+      "updateTime": "2025-01-04T16:16:35.984Z", 
+      "name": "Thai Lg for Academic and Professional Communication", 
+      "alternateLink": "https://classroom.google.com/c/NzAyODgyMTExNDY5", 
+      "courseGroupEmail": "Thai_Lg_for_Academic_and_Professional_Communication_450_1_67_4cd1c629@ku.th", 
+      "section": "450-1-67", 
+      "guardiansEnabled": false, 
+      "creationTime": "2024-08-07T02:14:37.843Z", 
+      "teacherGroupEmail": "Thai_Lg_for_Academic_and_Professional_Communication_450_1_67_teachers_9b108783@ku.th", 
+      "calendarId": "c_classroom472db10f@group.calendar.google.com", 
+      "courseState": "ARCHIVED", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "102071467782368984993", 
+      "id": "702882111469", 
+      "descriptionHeading": "Thai Lg for Academic and Professional Communication 450-1-67"
+    }, 
+    {
+      "updateTime": "2024-08-02T05:37:29.173Z", 
+      "name": "67-1-01219231-Databases", 
+      "alternateLink": "https://classroom.google.com/c/NzAyMjY1NTY2NTMz", 
+      "courseGroupEmail": "67_1_01219231_Databases_450_66a66140@ku.th", 
+      "section": "450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2024-08-02T05:34:47.195Z", 
+      "teacherGroupEmail": "67_1_01219231_Databases_450_teachers_45f70848@ku.th", 
+      "calendarId": "c_classroom94cee03c@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "110504674877076801025", 
+      "id": "702265566533", 
+      "descriptionHeading": "67-1-01219231-Databases 450"
+    }, 
+    {
+      "updateTime": "2024-11-26T05:02:41.950Z", 
+      "name": "67/1  01219218 Algo II", 
+      "alternateLink": "https://classroom.google.com/c/NzAyNjkxNDM2NTIz", 
+      "courseGroupEmail": "01219218_Algo_II_450_Tu_9_12_45b8ffe9@ku.th", 
+      "section": "450  (Tu 9-12)", 
+      "guardiansEnabled": false, 
+      "creationTime": "2024-08-06T01:54:07.261Z", 
+      "teacherGroupEmail": "01219218_Algo_II_450_Tu_9_12_teachers_09e3aa26@ku.th", 
+      "calendarId": "c_classroom05152611@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "115636970878233548373", 
+      "id": "702691436523", 
+      "descriptionHeading": "01219218 Algo II 450  (Tu 9-12)"
+    }, 
+    {
+      "updateTime": "2024-10-07T05:46:38.502Z", 
+      "description": "Individual Software Process", 
+      "alternateLink": "https://classroom.google.com/c/NjkxNTc2NDc5NzM4", 
+      "courseGroupEmail": "219241_ISP_2024_e42cf1a9@ku.th", 
+      "section": "2024", 
+      "guardiansEnabled": false, 
+      "creationTime": "2024-07-18T03:17:17.810Z", 
+      "name": "219241 ISP", 
+      "teacherGroupEmail": "219241_ISP_2024_teachers_332221f2@ku.th", 
+      "calendarId": "c_classroom101a5c13@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "102624657296985207669", 
+      "id": "691576479738", 
+      "descriptionHeading": "219241 ISP 2024", 
+      "room": "CPE 202"
+    }, 
+    {
+      "updateTime": "2024-03-08T10:38:49.413Z", 
+      "name": "Math 168 IUP 66/2", 
+      "alternateLink": "https://classroom.google.com/c/NjU5MjcxNjM1Nzk5", 
+      "courseGroupEmail": "Math_168_IUP_66_2_451_4546ab19@ku.th", 
+      "section": "451", 
+      "guardiansEnabled": false, 
+      "creationTime": "2024-03-08T10:37:41.647Z", 
+      "teacherGroupEmail": "Math_168_IUP_66_2_451_teachers_02b77c0f@ku.th", 
+      "calendarId": "c_classroom14169157@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "100060800951038321745", 
+      "id": "659271635799", 
+      "descriptionHeading": "Math 168 IUP 66/2 451"
+    }, 
+    {
+      "updateTime": "2024-08-09T18:30:02.248Z", 
+      "name": "01204216 Probability and Statistics", 
+      "alternateLink": "https://classroom.google.com/c/NjUxMTg3MzI1OTE0", 
+      "courseGroupEmail": "01204216_Probability_and_Statistics_Section_450_Academic_Year_2566_ddbda0bc@ku.th", 
+      "section": "Section 450, Academic Year 2566", 
+      "guardiansEnabled": false, 
+      "creationTime": "2024-01-06T16:34:49.810Z", 
+      "teacherGroupEmail": "01204216_Probability_and_Statistics_Section_450_Academic_Year_2566_teachers_a681dd75@ku.th", 
+      "calendarId": "c_classroom78929c97@group.calendar.google.com", 
+      "courseState": "ARCHIVED", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "111705903408590822796", 
+      "id": "651187325914", 
+      "descriptionHeading": "01204216 Probability and Statistics Section 450, Academic Year 2566"
+    }, 
+    {
+      "updateTime": "2025-12-04T03:45:27.858Z", 
+      "name": "01219217 Data Structure and Algorithm I", 
+      "alternateLink": "https://classroom.google.com/c/NjUzODY3NjUxMjkw", 
+      "courseGroupEmail": "01219217_Data_Structure_and_Algorithm_I_Second_Semester_2023_5e8b6845@ku.th", 
+      "section": "Second Semester 2023", 
+      "guardiansEnabled": false, 
+      "creationTime": "2024-01-10T23:34:05.524Z", 
+      "teacherGroupEmail": "01219217_Data_Structure_and_Algorithm_I_Second_Semester_2023_teachers_90323ff8@ku.th", 
+      "calendarId": "c_classroom21c7f633@group.calendar.google.com", 
+      "courseState": "ARCHIVED", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "107872652904023255179", 
+      "id": "653867651290", 
+      "descriptionHeading": "01219217 Data Structure and Algorithm I Second Semester 2023"
+    }, 
+    {
+      "updateTime": "2024-01-09T01:50:09.084Z", 
+      "name": "[2nd 2023] 204216-65 Prob.", 
+      "alternateLink": "https://classroom.google.com/c/NjUzNDkwMTkyNzQ0", 
+      "courseGroupEmail": "2nd_2023_204216_65_Prob_450_57be0a7a@ku.th", 
+      "section": "450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2024-01-09T01:50:09.084Z", 
+      "teacherGroupEmail": "2nd_2023_204216_65_Prob_450_teachers_bf1a6fdc@ku.th", 
+      "calendarId": "c_classroom3f10c5b4@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "114270309110811980408", 
+      "id": "653490192744", 
+      "descriptionHeading": "[2nd 2023] 204216-65 Prob. 450"
+    }, 
+    {
+      "updateTime": "2024-06-28T08:32:47.806Z", 
+      "room": "19202", 
+      "alternateLink": "https://classroom.google.com/c/NjQ0OTAzNzgyNzk4", 
+      "courseGroupEmail": "662_01418106_IUP_f3f4ff41@ku.th", 
+      "guardiansEnabled": false, 
+      "creationTime": "2023-12-07T06:59:26.808Z", 
+      "teacherGroupEmail": "662_01418106_IUP_teachers_187ce930@ku.th", 
+      "calendarId": "c_classroom4b61841d@group.calendar.google.com", 
+      "courseState": "ARCHIVED", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS", 
+        "gradeCategories": [
+          {
+            "defaultGradeDenominator": 10, 
+            "id": "650517366674", 
+            "name": "Lab2-Quiz"
+          }, 
+          {
+            "defaultGradeDenominator": 10, 
+            "id": "646667163985", 
+            "name": "Lab2-Discussion"
+          }
+        ]
+      }, 
+      "ownerId": "110732788912580064893", 
+      "id": "644903782798", 
+      "descriptionHeading": "662-01418106 (IUP)", 
+      "name": "662-01418106 (IUP)"
+    }, 
+    {
+      "updateTime": "2024-10-16T07:34:37.896Z", 
+      "name": "Programming II 2023", 
+      "alternateLink": "https://classroom.google.com/c/NjUwOTIwOTEzNDgz", 
+      "courseGroupEmail": "Computer_Programming_II_Section_450_d9b556a5@ku.th", 
+      "section": "Section 450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2024-01-04T14:40:51.734Z", 
+      "teacherGroupEmail": "Computer_Programming_II_Section_450_teachers_c360b057@ku.th", 
+      "calendarId": "c_classroom5205ac03@group.calendar.google.com", 
+      "courseState": "ARCHIVED", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "109702028035467063535", 
+      "id": "650920913483", 
+      "descriptionHeading": "Computer Programming II Section 450"
+    }, 
+    {
+      "updateTime": "2023-11-29T18:10:32.906Z", 
+      "name": "01219114/01219115 Programming 1", 
+      "alternateLink": "https://classroom.google.com/c/NjE2NTM0NDYxOTY4", 
+      "courseGroupEmail": "01219114_01219115_Programming_1_450_140efed0@ku.th", 
+      "section": "Section 450, Academic Year 2566", 
+      "guardiansEnabled": false, 
+      "creationTime": "2023-07-23T14:26:00.805Z", 
+      "teacherGroupEmail": "01219114_01219115_Programming_1_450_teachers_d743df2d@ku.th", 
+      "calendarId": "c_classroomd389cbe6@group.calendar.google.com", 
+      "courseState": "ACTIVE", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "109518954956422377073", 
+      "id": "616534461968", 
+      "descriptionHeading": "01219114/01219115 Programming 1 450"
+    }, 
+    {
+      "updateTime": "2023-12-25T15:12:09.528Z", 
+      "room": "E17304", 
+      "alternateLink": "https://classroom.google.com/c/NTYzNzM3NjgzMjUy", 
+      "courseGroupEmail": "2566_2023_S1_01420111_IUP_251_938fc519@ku.th", 
+      "section": "450", 
+      "guardiansEnabled": false, 
+      "creationTime": "2023-06-06T05:23:41.350Z", 
+      "teacherGroupEmail": "2566_2023_S1_01420111_IUP_251_teachers_e965a097@ku.th", 
+      "calendarId": "c_classroom1654db29@group.calendar.google.com", 
+      "courseState": "ARCHIVED", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "100536662787489064445", 
+      "id": "563737683252", 
+      "descriptionHeading": "InterSci-sec460_01420111 460 Wed9", 
+      "name": "2566 (2023) S1 01420111 450"
+    }, 
+    {
+      "updateTime": "2024-03-31T13:22:46.393Z", 
+      "name": "01219118 Discrete Mathematics and Linear Algebra", 
+      "alternateLink": "https://classroom.google.com/c/NjE3MzgwNjIzOTU3", 
+      "courseGroupEmail": "01219118_Discrete_Mathematics_and_Linear_Algebra_First_Semester_2023_3ccc25f3@ku.th", 
+      "section": "First Semester 2023", 
+      "guardiansEnabled": false, 
+      "creationTime": "2023-08-06T08:42:19.114Z", 
+      "teacherGroupEmail": "01219118_Discrete_Mathematics_and_Linear_Algebra_First_Semester_2023_teachers_349603a4@ku.th", 
+      "calendarId": "c_classroom554d37bf@group.calendar.google.com", 
+      "courseState": "ARCHIVED", 
+      "gradebookSettings": {
+        "displaySetting": "HIDE_OVERALL_GRADE", 
+        "calculationType": "TOTAL_POINTS"
+      }, 
+      "ownerId": "107872652904023255179", 
+      "id": "617380623957", 
+      "descriptionHeading": "01219118 Discrete Mathematics and Linear Algebra First Semester 2023"
+    }
+  ]
+}

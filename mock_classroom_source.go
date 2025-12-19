@@ -16,6 +16,7 @@ func (mcs *MockClassroomSource) GetCourseList() []list.Item {
 
 	courseList := make([]list.Item, len(mcs.MockCourses))
 	for i := range mcs.MockCourses {
+		mcs.MockCourses[i].InitializeCoursePosts()
 		courseList[i] = &mcs.MockCourses[i]
 	}
 	

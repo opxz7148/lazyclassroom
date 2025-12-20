@@ -3,6 +3,7 @@ package main
 import (
 	"strings"
 
+	"github.com/charmbracelet/bubbles/key"
 	"github.com/charmbracelet/bubbles/list"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
@@ -59,16 +60,13 @@ func NewCoursePostListModel() *CoursePostListModel {
 func (cplm *CoursePostListModel) NextTab() { cplm.SelectedList = (cplm.SelectedList + 1) % 3 }
 func (cplm *CoursePostListModel) PrevTab() { cplm.SelectedList = (cplm.SelectedList - 1) % 3 }
 
-func (cplm *CoursePostListModel) Select() {
-	cplm.inactiveTabStyle.BorderForeground(DetailSelectedColor)
-	cplm.activeTabStyle.BorderForeground(DetailSelectedColor)
-	cplm.windowStyle.BorderForeground(DetailSelectedColor)
+func (cplm *CoursePostListModel) SetBorderColor(color lipgloss.TerminalColor) {
+	cplm.inactiveTabStyle = cplm.inactiveTabStyle.BorderForeground(color)
+	cplm.activeTabStyle = cplm.activeTabStyle.BorderForeground(color)
+	cplm.windowStyle = cplm.windowStyle.BorderForeground(color)
 }
-func (cplm *CoursePostListModel) Unselect() {
-	cplm.inactiveTabStyle.BorderForeground(DetailUnSelectedColor)
-	cplm.activeTabStyle.BorderForeground(DetailUnSelectedColor)
-	cplm.windowStyle.BorderForeground(DetailUnSelectedColor)
-}
+func (cplm *CoursePostListModel) Select() { cplm.SetBorderColor(DetailSelectedColor) }
+func (cplm *CoursePostListModel) Unselect() { cplm.SetBorderColor(DetailUnSelectedColor) }
 
 func (cplm *CoursePostListModel) SetSize(width, height int) { cplm.width, cplm.height = width, height }
 
@@ -82,11 +80,11 @@ func (cplm *CoursePostListModel) Init() tea.Cmd { return nil }
 func (cplm *CoursePostListModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
-		switch msg.String() {
-		case "h", "right":
+		switch {
+		case key.Matches(msg, keys.NextTab):
 			cplm.NextTab()
 			return cplm, nil
-		case "l", "left":
+		case key.Matches(msg, keys.PrevTab):
 			cplm.PrevTab()
 			return cplm, nil
 		}
@@ -130,8 +128,7 @@ func (cplm *CoursePostListModel) View() string {
 	}
 
 	row := lipgloss.JoinHorizontal(lipgloss.Top, renderedTabs...)
-	doc.WriteString(row)
-	doc.WriteString("\n")
+	doc.WriteString(row + "\n")
 
 	contentWidth := lipgloss.Width(row) - BorderOffset
 

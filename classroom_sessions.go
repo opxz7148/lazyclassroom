@@ -34,21 +34,25 @@ type ClassroomSessionModel struct {
 	loading        bool
 	width          int
 	height         int
-	PaneList 	 map[int]Selectable
+	PaneList 	 map[int]SelectableModel
 	initialized    bool
+}
+
+type SelectableModel interface {
+	Selectable
+	tea.Model
 }
 
 func NewClassroomSession(source ClassroomSource) *ClassroomSessionModel {
 	// Initialize the list with empty items and default delegate
-	courseList := NewCourseListModel()
-	courseList.Title = "Courses"
+	courseList := NewCourseListModel("Courses")
 
 	return &ClassroomSessionModel{
 		CourseList: courseList,
 		source:     &source,
 		loading:    false,
 		SelectPane: CourseList,
-		PaneList: map[int]Selectable {
+		PaneList: map[int]SelectableModel {
 			CourseList: courseList,
 		},
 	}
@@ -73,7 +77,6 @@ func (cs *ClassroomSessionModel) IsLoading() bool         { return cs.loading }
 func (cs *ClassroomSessionModel) SetLoading(loading bool) { cs.loading = loading }
 
 func (cs *ClassroomSessionModel) NextPane() { cs.SelectPane = (cs.SelectPane + 1) % 2 }
-func (cs *ClassroomSessionModel) PrevPane() { cs.SelectPane = (cs.SelectPane - 1) % 2 }
 
 func (cs *ClassroomSessionModel) Init() tea.Cmd { 
 	return cs.RefreshCourseList() 
@@ -89,10 +92,7 @@ func (cs *ClassroomSessionModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		cs.CourseList.SetSize(listWidth, msg.Height-DetailPaneTopOffset)
 
 		// Apply initial selected state styles on first window size
-		if !cs.initialized {
-			cs.CourseList.Select()
-			cs.initialized = true
-		}
+		cs.initialized = true
 
 		courseItemList := cs.CourseList.Items()
 		for _, item := range courseItemList {
@@ -109,17 +109,12 @@ func (cs *ClassroomSessionModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return cs, tea.Quit
 		case key.Matches(msg, keys.NextTab):
 			cs.NextPane()
-			cs.CourseList.Select()
-			return cs, nil
-		case key.Matches(msg, keys.PrevTab):
-			cs.PrevPane()
-			cs.CourseList.Unselect()
 			return cs, nil
 		}
 	}
 
 	updatedModel, cmd := cs.CourseList.Update(msg)
-	cs.CourseList.Model = updatedModel
+	cs.CourseList = updatedModel.(*CourseListModel)
 
 	selectedCourse := cs.GetSelectedCourse().CoursePostList
 	cs.PaneList[CoursePostList] = selectedCourse
@@ -129,15 +124,13 @@ func (cs *ClassroomSessionModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 func (cs *ClassroomSessionModel) View() string {
 
-	// for i, pane := range cs.PaneList {
-	// 	if i == cs.SelectPane {
-	// 		pane.Select()
-	// 	} else {
-	// 		pane.Unselect()
-	// 	}
-	// }
-
-	// cs.CourseList.Select()
+	for i, pane := range cs.PaneList {
+		if i == cs.SelectPane {
+			pane.Select()
+		} else {
+			pane.Unselect()
+		}
+	}
 
 	listWidth := cs.CourseList.Width()
 

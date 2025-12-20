@@ -23,14 +23,15 @@ func (s *selectedState) UnselectStyleSet() {
 	clm.SetWidth(clm.Width() - 1)
 
 	availableWidth := clm.Width()
-	clm.Title = fmt.Sprintf("%d", availableWidth)
 
 	clm.activeDelegate.Styles.SelectedTitle = clm.activeDelegate.Styles.SelectedTitle.
 		Border(lipgloss.NormalBorder(), true, true, false, true).
-		Width(availableWidth)
+		Width(availableWidth).
+		UnsetMarginTop()
 	clm.activeDelegate.Styles.SelectedDesc = clm.activeDelegate.Styles.SelectedDesc.
 		Border(lipgloss.NormalBorder(), false, true, true, true).
-		Width(availableWidth)
+		Width(availableWidth).
+		UnsetMarginBottom()
 	clm.Model.SetDelegate(*clm.activeDelegate)
 
 	clm.ToggleState()
@@ -45,9 +46,7 @@ func (u *unselectedState) SelectStyleSet() {
 	clm := u.model
 
 	// Only set styles if width is valid (after WindowSizeMsg)
-	if clm.Width() <= 0 {
-		return
-	}
+	if clm.Width() <= 0 { return }
 
 	clm.SetWidth(clm.Width() + 1)
 
@@ -65,11 +64,10 @@ func (i *intializedState) SelectStyleSet()   {
 	clm := i.model
 
 	// Only set styles if width is valid (after WindowSizeMsg)
-	if clm.Width() <= 0 {
-		return
-	}
+	if clm.Width() <= 0 { return }
 	setSelectedState(clm)
 	clm.changeToSelectState()
+	fmt.Println(clm.state)
 }
 func (u *intializedState) UnselectStyleSet() {}
 
@@ -80,9 +78,11 @@ func setSelectedState(clm *CourseListModel) {
 
 	clm.activeDelegate.Styles.SelectedTitle = clm.activeDelegate.Styles.SelectedTitle.
 		Border(lipgloss.NormalBorder(), false, false, false, true).
-		Width(availableWidth)
+		Width(availableWidth).
+		MarginTop(1)
 	clm.activeDelegate.Styles.SelectedDesc = clm.activeDelegate.Styles.SelectedDesc.
 		Border(lipgloss.NormalBorder(), false, false, false, true).
-		Width(availableWidth)
+		Width(availableWidth).
+		MarginBottom(1)
 	clm.Model.SetDelegate(*clm.activeDelegate)
 }

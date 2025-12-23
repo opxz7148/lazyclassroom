@@ -6,83 +6,85 @@ import (
 	"github.com/charmbracelet/lipgloss"
 )
 
-type selectedState struct {
-	model *CourseListModel
+// ============================================
+// State pattern for CourseListPane
+// ============================================
+
+type selectedPaneState struct {
+	pane *CourseListPane
 }
 
-func (s *selectedState) SelectStyleSet() {}
-func (s *selectedState) UnselectStyleSet() {
+func (s *selectedPaneState) SelectStyleSet() {}
+func (s *selectedPaneState) UnselectStyleSet() {
+	p := s.pane
 
-	clm := s.model
-
-	// Only set styles if width is valid (after WindowSizeMsg)
-	if clm.Width() <= 0 {
+	if p.Width() <= 0 {
 		return
 	}
 
-	clm.SetWidth(clm.Width() - 1)
+	p.SetWidth(p.Width() - 1)
 
-	availableWidth := clm.Width()
+	availableWidth := p.Width()
 
-	clm.activeDelegate.Styles.SelectedTitle = clm.activeDelegate.Styles.SelectedTitle.
+	p.activeDelegate.Styles.SelectedTitle = p.activeDelegate.Styles.SelectedTitle.
 		Border(lipgloss.NormalBorder(), true, true, false, true).
 		Width(availableWidth).
 		UnsetMarginTop()
-	clm.activeDelegate.Styles.SelectedDesc = clm.activeDelegate.Styles.SelectedDesc.
+	p.activeDelegate.Styles.SelectedDesc = p.activeDelegate.Styles.SelectedDesc.
 		Border(lipgloss.NormalBorder(), false, true, true, true).
 		Width(availableWidth).
 		UnsetMarginBottom()
-	clm.Model.SetDelegate(*clm.activeDelegate)
+	p.Model.SetDelegate(*p.activeDelegate)
 
-	clm.ToggleState()
+	p.ToggleState()
 }
 
-type unselectedState struct {
-	model *CourseListModel
+type unselectedPaneState struct {
+	pane *CourseListPane
 }
 
-func (u *unselectedState) UnselectStyleSet() {}
-func (u *unselectedState) SelectStyleSet() {
-	clm := u.model
+func (u *unselectedPaneState) UnselectStyleSet() {}
+func (u *unselectedPaneState) SelectStyleSet() {
+	p := u.pane
 
-	// Only set styles if width is valid (after WindowSizeMsg)
-	if clm.Width() <= 0 { return }
+	if p.Width() <= 0 {
+		return
+	}
 
-	clm.SetWidth(clm.Width() + 1)
+	p.SetWidth(p.Width() + 1)
 
-	setSelectedState(clm)
+	setSelectedPaneStyle(p)
 
-	clm.ToggleState()
+	p.ToggleState()
 }
 
-
-type intializedState struct {
-	model *CourseListModel
+type initializedPaneState struct {
+	pane *CourseListPane
 }
 
-func (i *intializedState) SelectStyleSet()   {
-	clm := i.model
+func (i *initializedPaneState) SelectStyleSet() {
+	p := i.pane
 
-	// Only set styles if width is valid (after WindowSizeMsg)
-	if clm.Width() <= 0 { return }
-	setSelectedState(clm)
-	clm.changeToSelectState()
-	fmt.Println(clm.state)
+	if p.Width() <= 0 {
+		return
+	}
+	setSelectedPaneStyle(p)
+	p.changeToSelectState()
+	fmt.Println(p.state)
 }
-func (u *intializedState) UnselectStyleSet() {}
+func (i *initializedPaneState) UnselectStyleSet() {}
 
+// Helper function to set selected state styles for CourseListPane
+func setSelectedPaneStyle(p *CourseListPane) {
+	availableWidth := p.Width()
 
-// Helper function to set selected state
-func setSelectedState(clm *CourseListModel) {
-	availableWidth := clm.Width()
-
-	clm.activeDelegate.Styles.SelectedTitle = clm.activeDelegate.Styles.SelectedTitle.
+	p.activeDelegate.Styles.SelectedTitle = p.activeDelegate.Styles.SelectedTitle.
 		Border(lipgloss.NormalBorder(), false, false, false, true).
 		Width(availableWidth).
 		MarginTop(1)
-	clm.activeDelegate.Styles.SelectedDesc = clm.activeDelegate.Styles.SelectedDesc.
+	p.activeDelegate.Styles.SelectedDesc = p.activeDelegate.Styles.SelectedDesc.
 		Border(lipgloss.NormalBorder(), false, false, false, true).
 		Width(availableWidth).
 		MarginBottom(1)
-	clm.Model.SetDelegate(*clm.activeDelegate)
+	p.Model.SetDelegate(*p.activeDelegate)
 }

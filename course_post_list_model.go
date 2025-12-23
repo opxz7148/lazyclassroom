@@ -10,9 +10,9 @@ import (
 )
 
 const (
-	Announcement = iota
-	Material
-	CourseWork
+	AnnouncementTab = iota
+	MaterialTab
+	CourseWorkTab
 )
 
 type CoursePostListModel struct {

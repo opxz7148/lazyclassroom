@@ -40,8 +40,8 @@ func NewCoursePostListModel() *CoursePostListModel {
 	return &CoursePostListModel{
 		PostList: []list.Model{
 			NewPlainTabListModel(tabsList[AnnouncementTab]),
-			NewPlainTabListModel(tabsList[Material]),
-			NewPlainTabListModel(tabsList[CourseWork]),
+			NewPlainTabListModel(tabsList[MaterialTab]),
+			NewPlainTabListModel(tabsList[CourseWorkTab]),
 		},
 		SelectedList:     AnnouncementTab,
 		Tabs:             tabsList,

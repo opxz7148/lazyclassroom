@@ -8,6 +8,9 @@ import (
 
 type ClassroomSource interface {
 	GetCourseList() []list.Item
+	GetCourseAnnoucements(courseId string) []list.Item
+	GetCourseMaterials(courseId string) []list.Item
+	GetCourseWorks(courseId string) []list.Item
 }
 
 type ClassroomSessionModel struct {

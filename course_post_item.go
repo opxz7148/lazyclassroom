@@ -1,22 +1,18 @@
 package main
 
-import "time"
-
-type CoursePostMaterial struct {
-	CoursePostId string `json:"coursePostId"`
-	Id           string `json:"id"`
-	Link         string `json:"link"`
-	Title        string `json:"title"`
-}
+import (
+	"strings"
+	"time"
+)
 
 type CoursePostItem struct {
-	CreatorId    string               `json:"creatorUserId"`
-	CreatorName  string               `json:"-"`
-	CourseId     string               `json:"courseId"`
-	Id           string               `json:"id"`
-	CreationTime time.Time            `json:"creationTime"`
-	UpdateTime   time.Time            `json:"updateTime"`
-	Material     []CoursePostMaterial `json:"materials"`
+	CreatorId    string     `json:"creatorUserId"`
+	CreatorName  string     `json:"-"`
+	CourseId     string     `json:"courseId"`
+	Id           string     `json:"id"`
+	CreationTime time.Time  `json:"creationTime"`
+	UpdateTime   time.Time  `json:"updateTime"`
+	Materials    []Material `json:"materials"`
 }
 
 // AnnouncementItem represents a class announcement
@@ -26,23 +22,25 @@ type AnnouncementItem struct {
 	Text string `json:"text"`
 }
 
-func (ai *AnnouncementItem) FilterValue() string {return ai.Text}
-func (ai *AnnouncementItem) Title() string       {return ai.Text}
-
+func (ai *AnnouncementItem) FilterValue() string { return ai.Text }
+func (ai *AnnouncementItem) Title() string       { 
+	return strings.Split(ai.Text, "\n")[0]
+}
+func (ai *AnnouncementItem) Description() string { return ai.CreationTime.Format("2006-01-02") }
 
 // CourseWorkMaterialItem represents course materials (lectures, resources)
 // Has Title, Desc, TopicId but NO grading or due dates
 type CourseWorkMaterialItem struct {
 	CoursePostItem
-	Desc    string `json:"description"`
-	CourseWorkTitle   string `json:"title"`
-	TopicId string `json:"topicId"`
+	Desc            string `json:"description"`
+	CourseWorkTitle string `json:"title"`
+	TopicId         string `json:"topicId"`
 }
 
 func (cwmi *CourseWorkMaterialItem) FilterValue() string {
 	return cwmi.CourseWorkTitle + " " + cwmi.Desc
 }
-func (cwmi *CourseWorkMaterialItem) Title() string { return cwmi.CourseWorkTitle }
+func (cwmi *CourseWorkMaterialItem) Title() string       { return cwmi.CourseWorkTitle }
 func (cwmi *CourseWorkMaterialItem) Description() string { return cwmi.Desc }
 
 // CourseWorkItem represents assignments with grades and due dates

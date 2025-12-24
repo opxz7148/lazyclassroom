@@ -16,8 +16,9 @@ const (
 )
 
 type CoursePostListModel struct {
-	PostList         []list.Model
-	SelectedList     int
+	PostTabList      []list.Model
+	CourseID         string
+	SelectedTab      int
 	Tabs             []string
 	width            int
 	height           int
@@ -27,7 +28,7 @@ type CoursePostListModel struct {
 	windowStyle      lipgloss.Style
 }
 
-func NewCoursePostListModel() *CoursePostListModel {
+func NewCoursePostListModel(CourseID string) *CoursePostListModel {
 
 	tabsList := []string{"Announcements", "Materials", "Course Works"}
 
@@ -38,27 +39,26 @@ func NewCoursePostListModel() *CoursePostListModel {
 		Padding(0, 1)
 
 	return &CoursePostListModel{
-		PostList: []list.Model{
+		PostTabList: []list.Model{
 			NewPlainTabListModel(tabsList[AnnouncementTab]),
 			NewPlainTabListModel(tabsList[MaterialTab]),
 			NewPlainTabListModel(tabsList[CourseWorkTab]),
 		},
-		SelectedList:     AnnouncementTab,
+		SelectedTab:      AnnouncementTab,
 		Tabs:             tabsList,
 		inactiveTabStyle: inactiveTabStyle,
 		activeTabStyle: inactiveTabStyle.
 			Border(activeTabBorder, true),
 		windowStyle: lipgloss.NewStyle().
 			BorderForeground(DetailUnSelectedColor).
-			Padding(2).
-			Align(lipgloss.Center, lipgloss.Center).
+			Padding(1).
 			Border(lipgloss.NormalBorder()).
 			UnsetBorderTop(),
 	}
 }
 
-func (cplm *CoursePostListModel) NextTab() { cplm.SelectedList = (cplm.SelectedList + 1) % 3 }
-func (cplm *CoursePostListModel) PrevTab() { cplm.SelectedList = (cplm.SelectedList + 2) % 3 }
+func (cplm *CoursePostListModel) NextTab() { cplm.SelectedTab = (cplm.SelectedTab + 1) % 3 }
+func (cplm *CoursePostListModel) PrevTab() { cplm.SelectedTab = (cplm.SelectedTab + 2) % 3 }
 
 func (cplm *CoursePostListModel) SetBorderColor(color lipgloss.TerminalColor) {
 	cplm.inactiveTabStyle = cplm.inactiveTabStyle.BorderForeground(color)
@@ -68,20 +68,65 @@ func (cplm *CoursePostListModel) SetBorderColor(color lipgloss.TerminalColor) {
 func (cplm *CoursePostListModel) Select()   { cplm.SetBorderColor(DetailSelectedColor) }
 func (cplm *CoursePostListModel) Unselect() { cplm.SetBorderColor(DetailUnSelectedColor) }
 
-func (cplm *CoursePostListModel) SetSize(width, height int) { cplm.width, cplm.height = width, height }
+func (cplm *CoursePostListModel) SetSize(width, height int) {
+	cplm.width, cplm.height = width, height
 
-func (cplm *CoursePostListModel) SetTabData(tabIndex int, items []list.Item) {
-	if tabIndex < 0 || tabIndex >= len(cplm.PostList) {
-		return
+	// Account for: tab bar (~3 lines) + window style padding (2*2) + borders (2)
+	// tabBarHeight := 3
+	windowPadding := cplm.windowStyle.GetVerticalPadding() + cplm.windowStyle.GetVerticalBorderSize()
+	listHeight := height - windowPadding
+	listWidth := width - cplm.windowStyle.GetHorizontalPadding() - cplm.windowStyle.GetHorizontalBorderSize()
+
+	// Update size for all tab lists
+	for i := range cplm.PostTabList {
+		cplm.PostTabList[i].SetSize(listWidth - 4, listHeight)
 	}
-	cplm.PostList[tabIndex].SetItems(items)
+}
+
+type SetTabDataMsg struct {
+	CourseID    string
+	TabIndex    int
+	OriginalMsg tea.Msg
+}
+
+func (cplm *CoursePostListModel) SetTabData(tabIndex int, items []list.Item) tea.Cmd {
+	if tabIndex < 0 || tabIndex >= len(cplm.PostTabList) {
+		return nil
+	}
+	cmd := cplm.PostTabList[tabIndex].SetItems(items)
+
+	// If no cmd returned (filtering not active), no need to wrap
+	if cmd == nil {
+		return nil
+	}
+
+	return func() tea.Msg {
+		msg := cmd()
+		return SetTabDataMsg{
+			TabIndex:    tabIndex,
+			OriginalMsg: msg,
+			CourseID:    cplm.CourseID,
+		}
+	}
 }
 
 func (cplm *CoursePostListModel) Init() tea.Cmd { return nil }
 
 func (cplm *CoursePostListModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
+	case SetTabDataMsg:
+		var cmd tea.Cmd
+		cplm.PostTabList[msg.TabIndex], cmd = cplm.PostTabList[msg.TabIndex].Update(msg.OriginalMsg)
+		return cplm, cmd
 	case tea.KeyMsg:
+
+		if cplm.PostTabList[cplm.SelectedTab].FilterState() == list.Filtering {
+			// Delegate to the active tab's list filtering
+			updatedList, cmd := cplm.PostTabList[cplm.SelectedTab].Update(msg)
+			cplm.PostTabList[cplm.SelectedTab] = updatedList
+			return cplm, cmd
+		}
+
 		switch {
 		case key.Matches(msg, keys.Right):
 			cplm.NextTab()
@@ -92,7 +137,7 @@ func (cplm *CoursePostListModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 	}
 
-	cplm.PostList[cplm.SelectedList], _ = cplm.PostList[cplm.SelectedList].Update(msg)
+	cplm.PostTabList[cplm.SelectedTab], _ = cplm.PostTabList[cplm.SelectedTab].Update(msg)
 	return cplm, nil
 }
 
@@ -109,7 +154,7 @@ func (cplm *CoursePostListModel) View() string {
 
 	for i, t := range cplm.Tabs {
 		var style lipgloss.Style
-		isFirst, isLast, isActive := i == 0, i == len(cplm.Tabs)-1, i == cplm.SelectedList
+		isFirst, isLast, isActive := i == 0, i == len(cplm.Tabs)-1, i == cplm.SelectedTab
 		if isActive {
 			style = cplm.activeTabStyle
 		} else {
@@ -137,8 +182,8 @@ func (cplm *CoursePostListModel) View() string {
 	doc.WriteString(
 		cplm.windowStyle.
 			Width(contentWidth).
-			Height(cplm.height).
-			Render(cplm.PostList[cplm.SelectedList].View()),
+			MaxHeight(cplm.height).
+			Render(cplm.PostTabList[cplm.SelectedTab].View()),
 	)
 	return doc.String()
 }
@@ -147,8 +192,9 @@ func NewPlainTabListModel(title string) list.Model {
 	delegate := list.NewDefaultDelegate()
 	plainList := list.New([]list.Item{}, delegate, 0, 0)
 	plainList.Title = title
-	plainList.SetShowStatusBar(false)
-	plainList.SetShowHelp(false)
+	// plainList.SetShowStatusBar(false)
+	// plainList.SetShowHelp(false)
 	plainList.SetShowTitle(false)
+	plainList.SetShowPagination(false)
 	return plainList
 }

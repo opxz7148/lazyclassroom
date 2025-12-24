@@ -44,6 +44,7 @@ type ClassRoomModel struct {
 	paneList   map[int]SelectableModel
 	width      int
 	height     int
+	coureseLoaded bool
 }
 
 // getCourseListPane returns typed access to the course list pane
@@ -58,6 +59,7 @@ func NewClassRoomModel(source ClassroomSource) *ClassRoomModel {
 		source:    source,
 		selectPane: CourseListPaneID,
 		paneList:   make(map[int]SelectableModel),
+		coureseLoaded: false,
 	}
 
 	m.paneList[CourseListPaneID] = courseListPane
@@ -67,6 +69,7 @@ func NewClassRoomModel(source ClassroomSource) *ClassRoomModel {
 
 // SetItems delegates to the course list pane
 func (m *ClassRoomModel) SetItems(items []list.Item) tea.Cmd {
+	m.coureseLoaded = true
 	return m.getCourseListPane().SetItems(items)
 }
 
@@ -100,6 +103,25 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			}
 		}
 
+	case SetTabDataMsg:
+		
+		if courseItem := m.GetSelectedCourse(); courseItem != nil && courseItem.ClassIDChecked(msg.CourseID) {
+			_, cmd := courseItem.CoursePostListModel.Update(msg)
+			return m, cmd
+		}
+
+		for _, course := range courseListPane.Items() { 
+			if courseItem, ok := course.(*CourseItem); ok && courseItem.ClassIDChecked(msg.CourseID) {
+				if courseItem.CoursePostListModel != nil {
+					// Route to the specific tab's list
+					_, cmd := courseItem.Update(msg)
+					return m, cmd
+				}
+				break
+			}
+		}
+		return m, nil
+
 	case tea.KeyMsg:
 		switch {
 		case key.Matches(msg, keys.NextTab):
@@ -107,16 +129,24 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return m, nil
 		}
 	}
+	cmds := []tea.Cmd{}
 
 	// Update course list pane and reassign to paneList
 	updatedPane, cmd := m.paneList[m.selectPane].Update(msg)
+	cmds = append(cmds, cmd)
 	m.paneList[m.selectPane] = updatedPane.(SelectableModel)
 	
 	// Update pane list with current detail pane
 	if selected := m.GetSelectedCourse(); selected != nil && selected.CoursePostListModel != nil {
+		if !selected.IsFetched() {
+			announcements := m.source.GetCourseAnnoucements(selected.ClassRoomId)
+			materials := m.source.GetCourseMaterials(selected.ClassRoomId)
+			courseWorks := m.source.GetCourseWorks(selected.ClassRoomId)
+			cmds = append(cmds, selected.InsertCoursePosts(announcements, materials, courseWorks))
+		}
 		m.paneList[CoursePostPaneID] = selected
 	}
-	return m, cmd
+	return m, tea.Batch(cmds...)
 }
 
 func (m *ClassRoomModel) View() string {
@@ -148,7 +178,7 @@ func (m *ClassRoomModel) View() string {
 
 	var detailView string
 	if selectedCourse != nil && selectedCourse.CoursePostListModel != nil {
-		detailView = selectedCourse.CoursePostListModel.View()
+		detailView = selectedCourse.View()
 	} else {
 		detailView = "No Course Selected"
 	}

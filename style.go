@@ -18,6 +18,15 @@ var (
 	inactiveTabBorder = tabBorderWithBottom("┴", "─", "┴")
 	activeTabBorder   = tabBorderWithBottom("┘", " ", "└")
 	docStyle          = lipgloss.NewStyle().Padding(1, 2, 1, 2)
+	
+	TitleStyle           = lipgloss.NewStyle().
+		Background(lipgloss.Color("62")).
+		Foreground(lipgloss.Color("230")).
+		Bold(true)
+
+	SubtitleStyle = lipgloss.NewStyle().
+		Foreground(lipgloss.AdaptiveColor{Light: "#555555", Dark: "#AAAAAA"}).
+		Italic(true)
 
 	DetailSelectedColor   = lipgloss.AdaptiveColor{Light: "#874BFD", Dark: "#7D56F4"}
 	DetailUnSelectedColor = lipgloss.AdaptiveColor{Light: "#000000ff", Dark: "#ffffffff"}
@@ -25,3 +34,8 @@ var (
 	SelectedListItemColor  = lipgloss.AdaptiveColor{Light: "#EE6FF8", Dark: "#EE6FF8"}
 	SelectedListItemSubcolor = lipgloss.AdaptiveColor{Light: "#F793FF", Dark: "#AD58B4"}
 )
+
+func ContentWrappingStyle(width int) lipgloss.Style {
+	return lipgloss.NewStyle().
+		Width(width)
+}

@@ -39,7 +39,9 @@ func NewCourseListPane(title string) *CourseListPane {
 func (p *CourseListPane) ToggleState()         { p.state *= -1 }
 func (p *CourseListPane) changeToSelectState() { p.state = 1 }
 
-// SelectableModel interface
+// ============================================
+// Implements Selectable interface
+// ============================================
 func (p *CourseListPane) Select()   { p.stateMap[p.state].SelectStyleSet() }
 func (p *CourseListPane) Unselect() { p.stateMap[p.state].UnselectStyleSet() }
 
@@ -55,7 +57,9 @@ func (p *CourseListPane) GetSelectedCourse() *CourseItem {
 	return nil
 }
 
-// tea.Model interface
+// ============================================
+// Implements tea.Model interface
+// ============================================
 func (p *CourseListPane) Init() tea.Cmd { return nil }
 
 func (p *CourseListPane) Update(msg tea.Msg) (tea.Model, tea.Cmd) {

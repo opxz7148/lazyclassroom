@@ -13,6 +13,9 @@ type CourseItem struct {
 	*CoursePostListModel
 }
 
+// ============================================
+// Implements list.Item interface
+// ============================================
 func (ci *CourseItem) FilterValue() string { return ci.Name }
 func (ci *CourseItem) Title() string       { return ci.Name }
 func (ci *CourseItem) Description() string { return ci.Section }
@@ -37,6 +40,9 @@ func (ci *CourseItem) InsertCoursePosts (
 	return tea.Batch(cmds...)
 }
 
+// ============================================
+// Implements tea.Model interface
+// ============================================
 func (ci *CourseItem) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	updatedModel, cmd := ci.CoursePostListModel.Update(msg)
 	ci.CoursePostListModel = updatedModel.(*CoursePostListModel)

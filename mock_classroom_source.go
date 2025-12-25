@@ -15,6 +15,9 @@ type MockClassroomSource struct {
 	MockCourseWorks []CourseWorkItem
 }
 
+// ============================================
+// Implements ClassroomSource interface
+// ============================================
 func (mcs *MockClassroomSource) GetCourseList() []list.Item {
 
 	courseList := make([]list.Item, len(mcs.MockCourses))

@@ -65,6 +65,10 @@ func (cplm *CoursePostListModel) SetBorderColor(color lipgloss.TerminalColor) {
 	cplm.activeTabStyle = cplm.activeTabStyle.BorderForeground(color)
 	cplm.windowStyle = cplm.windowStyle.BorderForeground(color)
 }
+
+// ============================================
+// Implements Selectable interface
+// ============================================
 func (cplm *CoursePostListModel) Select()   { cplm.SetBorderColor(DetailSelectedColor) }
 func (cplm *CoursePostListModel) Unselect() { cplm.SetBorderColor(DetailUnSelectedColor) }
 
@@ -110,6 +114,9 @@ func (cplm *CoursePostListModel) SetTabData(tabIndex int, items []list.Item) tea
 	}
 }
 
+// ============================================
+// Implements tea.Model interface
+// ============================================
 func (cplm *CoursePostListModel) Init() tea.Cmd { return nil }
 
 func (cplm *CoursePostListModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {

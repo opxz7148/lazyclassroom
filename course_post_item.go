@@ -22,8 +22,11 @@ type AnnouncementItem struct {
 	Text string `json:"text"`
 }
 
+// ============================================
+// Implements list.Item interface
+// ============================================
 func (ai *AnnouncementItem) FilterValue() string { return ai.Text }
-func (ai *AnnouncementItem) Title() string       { 
+func (ai *AnnouncementItem) Title() string { 
 	return strings.Split(ai.Text, "\n")[0]
 }
 func (ai *AnnouncementItem) Description() string { return ai.CreationTime.Format("2006-01-02") }
@@ -37,6 +40,9 @@ type CourseWorkMaterialItem struct {
 	TopicId         string `json:"topicId"`
 }
 
+// ============================================
+// Implements list.Item interface
+// ============================================
 func (cwmi *CourseWorkMaterialItem) FilterValue() string {
 	return cwmi.CourseWorkTitle + " " + cwmi.Desc
 }

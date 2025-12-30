@@ -15,6 +15,9 @@ type CoursePostItem struct {
 	Materials    []Material `json:"materials"`
 }
 
+func (cpi *CoursePostItem) Author() string    { return cpi.CreatorId }
+func (cpi *CoursePostItem) ExtraInfo() string { return "" }
+
 // AnnouncementItem represents a class announcement
 // Unique field: Text (announcement content)
 type AnnouncementItem struct {
@@ -26,10 +29,14 @@ type AnnouncementItem struct {
 // Implements list.Item interface
 // ============================================
 func (ai *AnnouncementItem) FilterValue() string { return ai.Text }
-func (ai *AnnouncementItem) Title() string { 
-	return strings.Split(ai.Text, "\n")[0]
-}
-func (ai *AnnouncementItem) Description() string { return ai.CreationTime.Format("2006-01-02") }
+func (ai *AnnouncementItem) Title() string { return strings.Split(ai.Text, "\n")[0] }
+// func (ai *AnnouncementItem) Description() string { return ai.CreationTime.Format("2006-01-02") }
+func (ai *AnnouncementItem) Description() string { return ai.CreatorName }
+// ============================================
+// Implements PostInfo interface
+// ============================================
+func (ai *AnnouncementItem) PostTitle() string { return "Announcement" }
+func (ai *AnnouncementItem) Content() string   { return ai.Text }
 
 // CourseWorkMaterialItem represents course materials (lectures, resources)
 // Has Title, Desc, TopicId but NO grading or due dates
@@ -49,6 +56,12 @@ func (cwmi *CourseWorkMaterialItem) FilterValue() string {
 func (cwmi *CourseWorkMaterialItem) Title() string       { return cwmi.CourseWorkTitle }
 func (cwmi *CourseWorkMaterialItem) Description() string { return cwmi.Desc }
 
+// ============================================
+// Implements PostInfo interface
+// ============================================
+func (cwmi *CourseWorkMaterialItem) PostTitle() string { return cwmi.CourseWorkTitle }
+func (cwmi *CourseWorkMaterialItem) Content() string   { return cwmi.Desc }
+
 // CourseWorkItem represents assignments with grades and due dates
 // Extends CourseWorkMaterialItem with dueDate, dueTime, maxPoints, workType
 type CourseWorkItem struct {
@@ -66,3 +79,42 @@ type CourseWorkItem struct {
 	WorkType                   string  `json:"workType"`
 	SubmissionModificationMode string  `json:"submissionModificationMode"`
 }
+
+// DueDateTime parses the DueDateStruct and DueTimeStruct and converts to Thai timezone
+// Returns formatted string in "2006-01-02 15:04" format in Asia/Bangkok timezone
+func (cwi *CourseWorkItem) DueDateTime() string {
+	// Check if due date is set
+	if cwi.DueDateStruct.Year == 0 {
+		return "No due date"
+	}
+
+	// Create time in UTC (Google Classroom API returns UTC)
+	dueTime := time.Date(
+		cwi.DueDateStruct.Year,
+		time.Month(cwi.DueDateStruct.Month),
+		cwi.DueDateStruct.Day,
+		cwi.DueTimeStruct.Hours,
+		cwi.DueTimeStruct.Minutes,
+		0, // seconds
+		0, // nanoseconds
+		time.UTC,
+	)
+
+	// Load Thai timezone (Asia/Bangkok)
+	thaiLocation, err := time.LoadLocation("Asia/Bangkok")
+	if err != nil {
+		// Fallback to UTC+7 if location loading fails
+		thaiLocation = time.FixedZone("ICT", 7*60*60)
+	}
+
+	// Convert to Thai timezone
+	thaiTime := dueTime.In(thaiLocation)
+
+	// Format as string
+	return thaiTime.Format("2006-01-02 15:04")
+}
+
+// ============================================
+// Implements PostInfo interface
+// ============================================
+func (cwi *CourseWorkItem) ExtraInfo() string { return "Due: " + cwi.DueDateTime() }

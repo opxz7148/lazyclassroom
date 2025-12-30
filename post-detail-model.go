@@ -1,8 +1,7 @@
 package main
 
 import (
-	"fmt"
-
+	"github.com/charmbracelet/bubbles/key"
 	"github.com/charmbracelet/bubbles/viewport"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
@@ -19,9 +18,10 @@ var (
 )
 
 type PostInfo interface {
-	GetAuthor() string
-	GetTitle() string
-	GetContent() string
+	Author() string
+	PostTitle() string
+	Content() string
+	ExtraInfo() string
 }
 
 type PostDetailModel struct {
@@ -31,7 +31,7 @@ type PostDetailModel struct {
 	contentViewPort viewport.Model
 }
 
-func NewPostModalModel() *PostDetailModel {
+func NewPostDetailModel() *PostDetailModel {
 	return &PostDetailModel{
 		postInfo: nil,
 	}
@@ -40,27 +40,63 @@ func NewPostModalModel() *PostDetailModel {
 func (pm *PostDetailModel) SetSize(width, height int) {
 	pm.width, pm.height = width, height
 
+	// Get header height, safe even if postInfo is nil
 	headerHeight := lipgloss.Height(pm.headerView())
-	verticalMarginHeight := headerHeight + BorderOffset
+	verticalMarginHeight := headerHeight +
+		contentTitleStyle.GetVerticalMargins() +
+		contentSubtitleStyle.GetVerticalMargins() +
+		contentTitleStyle.GetVerticalFrameSize() +
+		contentSubtitleStyle.GetVerticalFrameSize()
 
 	// Account for side borders (2 chars for left/right borders + padding)
 	borderWidth := contentBodyStyle.GetHorizontalPadding() + contentBodyStyle.GetHorizontalBorderSize()
 
-	pm.contentViewPort = viewport.New(width-borderWidth, height-verticalMarginHeight)
+	// Ensure dimensions are positive
+	viewportWidth := width - borderWidth
+	viewportHeight := height - verticalMarginHeight
+	if viewportWidth < 1 {
+		viewportWidth = 1
+	}
+	if viewportHeight < 1 {
+		viewportHeight = 1
+	}
+
+	pm.contentViewPort = viewport.New(viewportWidth, viewportHeight)
 	pm.contentViewPort.YPosition = headerHeight
 }
 
 func (pm *PostDetailModel) SetPostInfo(postInfo PostInfo) {
 	pm.postInfo = postInfo
+
+	// Update viewport content when postInfo changes
+	if pm.contentViewPort.Width > 0 && postInfo != nil {
+		wrappedContent := ContentWrappingStyle(pm.contentViewPort.Width - contentBodyStyle.GetHorizontalFrameSize()).Render(postInfo.Content())
+		pm.contentViewPort.SetContent(wrappedContent)
+	}
 }
 
 // ============================================
 // Implements tea.Model interface
 // ============================================
 
+type CloseDetailMsg struct{}
+
 func (pm *PostDetailModel) Init() tea.Cmd { return nil }
 
 func (pm *PostDetailModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+
+
+
+	switch msg := msg.(type) {
+	case tea.WindowSizeMsg:
+		pm.SetSize(msg.Width, msg.Height)
+	case tea.KeyMsg:
+		switch {
+		case key.Matches(msg, keys.Back):
+			return pm, func() tea.Msg { return CloseDetailMsg{} }
+		}
+	}
+
 	return pm, nil
 }
 
@@ -70,10 +106,10 @@ func (pm *PostDetailModel) headerView() string {
 		return contentTitleStyle.Render("No post selected.")
 	}
 
-	title := contentTitleStyle.Render(pm.postInfo.GetTitle())
-	author := contentSubtitleStyle.Render(fmt.Sprintf("%s", pm.postInfo.GetAuthor()))
+	title := contentTitleStyle.Render(pm.postInfo.PostTitle())
+	extraInfo := contentSubtitleStyle.Render(pm.postInfo.Author() + " | " + pm.postInfo.ExtraInfo())
 
-	return title + " " + author
+	return title + " " + extraInfo
 }
 
 func (pm *PostDetailModel) View() string {
@@ -81,7 +117,7 @@ func (pm *PostDetailModel) View() string {
 		return "No post selected."
 	}
 
-	wrappedContent := ContentWrappingStyle(pm.contentViewPort.Width - contentBodyStyle.GetHorizontalFrameSize()).Render(pm.postInfo.GetContent())
+	wrappedContent := ContentWrappingStyle(pm.contentViewPort.Width - contentBodyStyle.GetHorizontalFrameSize()).Render(pm.postInfo.Content())
 
 	pm.contentViewPort.SetContent(wrappedContent)
 

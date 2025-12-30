@@ -1,24 +1,25 @@
 package main
 
 type MockPostInfo struct {
-	Author  string
-	Title   string
-	Content string
+	author  string
+	title   string
+	content string
 }
 
 // ============================================
 // Implements PostInfo interface
 // ============================================
 
-func (mpi *MockPostInfo) GetAuthor() string  { return mpi.Author }
-func (mpi *MockPostInfo) GetTitle() string   { return mpi.Title }
-func (mpi *MockPostInfo) GetContent() string { return mpi.Content }
+func (mpi *MockPostInfo) Author() string  { return mpi.author }
+func (mpi *MockPostInfo) PostTitle() string   { return mpi.title }
+func (mpi *MockPostInfo) Content() string { return mpi.content }
+func (mpi *MockPostInfo) ExtraInfo() string { return "Yes some extra info" }
 
 func NewMockPostInfo() *MockPostInfo {
 	return &MockPostInfo{
-		Author: "John Doe",
-		Title:  "Introduction to Advanced Algorithms",
-		Content: `Welcome to the Advanced Algorithms course!
+		author: "John Doe",
+		title:  "Introduction to Advanced Algorithms",
+		content: `Welcome to the Advanced Algorithms course!
 
 This semester, we will explore various algorithmic techniques and data structures that are fundamental to computer science. Here's what you can expect:
 

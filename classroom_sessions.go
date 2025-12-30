@@ -29,11 +29,6 @@ func NewClassroomSession(source ClassroomSource) *ClassroomSessionModel {
 	}
 }
 
-func (cs *ClassroomSessionModel) RefreshCourseList() tea.Cmd {
-	courseItems := (*cs.source).GetCourseList()
-	return cs.ClassRoom.SetItems(courseItems)
-}
-
 func (cs *ClassroomSessionModel) IsLoading() bool         { return cs.loading }
 func (cs *ClassroomSessionModel) SetLoading(loading bool) { cs.loading = loading }
 
@@ -41,7 +36,7 @@ func (cs *ClassroomSessionModel) SetLoading(loading bool) { cs.loading = loading
 // Implements tea.Model interface
 // ============================================
 func (cs *ClassroomSessionModel) Init() tea.Cmd {
-	return cs.RefreshCourseList()
+	return cs.ClassRoom.Init()
 }
 
 func (cs *ClassroomSessionModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {

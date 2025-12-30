@@ -70,10 +70,15 @@ func NewClassRoomModel(source ClassroomSource) *ClassRoomModel {
 	return m
 }
 
+type CourseListLoadMsg struct{ originalMsg tea.Msg }
+
 // SetItems delegates to the course list pane
 func (m *ClassRoomModel) SetItems(items []list.Item) tea.Cmd {
 	m.coureseLoaded = true
-	return m.getCourseListPane().SetItems(items)
+	cmd := m.getCourseListPane().SetItems(items)
+	return func() tea.Msg {
+		return CourseListLoadMsg{originalMsg: cmd()}
+	}
 }
 
 // Pane management
@@ -84,10 +89,40 @@ func (m *ClassRoomModel) GetSelectedCourse() *CourseItem {
 	return m.getCourseListPane().GetSelectedCourse()
 }
 
+// sizeAllCoursePostLists sizes all CoursePostListModels based on current window dimensions
+func (m *ClassRoomModel) sizeAllCoursePostLists() {
+	if m.width <= 0 || m.height <= 0 {
+		return
+	}
+
+	courseListPane := m.getCourseListPane()
+	listWidth := int(float64(m.width)*CourseListPaneWidthRatio + 2)
+
+	for _, item := range courseListPane.Items() {
+		if courseItem, ok := item.(*CourseItem); ok && courseItem.CoursePostListModel != nil {
+			courseItem.SetSize(
+				m.width-listWidth-SomeRandomConstantThatMakeItNotBreak-DetailPanePaddingOffset,
+				m.height-SomeRandomConstantThatMakeItNotBreak-DetailPaneTopOffset,
+			)
+		}
+	}
+}
+
+type SetCourseListMsg struct {
+	CourseItems []list.Item
+}
+
+func (m *ClassRoomModel) fetchCourseList() tea.Msg {
+	courseList := m.source.GetCourseList()
+	return SetCourseListMsg{CourseItems: courseList}
+}
+
 // ============================================
 // Implements tea.Model interface
 // ============================================
-func (m *ClassRoomModel) Init() tea.Cmd { return nil }
+func (m *ClassRoomModel) Init() tea.Cmd {
+	return m.fetchCourseList
+}
 
 func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	courseListPane := m.getCourseListPane()
@@ -99,16 +134,7 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 		courseListPane.SetSize(listWidth, msg.Height-DetailPaneTopOffset)
 		m.postDetail.Update(msg)
-
-		// Resize all CoursePostLists
-		for _, item := range courseListPane.Items() {
-			if courseItem, ok := item.(*CourseItem); ok && courseItem.CoursePostListModel != nil {
-				courseItem.SetSize(
-					msg.Width-listWidth-SomeRandomConstantThatMakeItNotBreak-DetailPanePaddingOffset,
-					msg.Height-SomeRandomConstantThatMakeItNotBreak-DetailPaneTopOffset,
-				)
-			}
-		}
+		m.sizeAllCoursePostLists()
 
 	case SetTabDataMsg:
 
@@ -128,6 +154,32 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			}
 		}
 		return m, nil
+
+	case SetCourseListMsg:
+		m.coureseLoaded = true
+
+		cmd := m.getCourseListPane().SetItems(msg.CourseItems)
+
+		// Size all CoursePostLists after setting items
+		m.sizeAllCoursePostLists()
+
+		// If cmd is nil, items are set but no further command needed
+		if cmd == nil {
+			return m, nil
+		}
+
+		// Wrap the command to handle it later
+		return m, func() tea.Msg {
+			return CourseListLoadMsg{originalMsg: cmd()}
+		}
+
+	case CourseListLoadMsg:
+		updatedCourseList, cmdFromList := m.getCourseListPane().Update(msg.originalMsg)
+		if updatedPane, ok := updatedCourseList.(*CourseListPane); ok {
+			m.paneList[CourseListPaneID] = updatedPane
+		}
+
+		return m, cmdFromList
 
 	case ShowPostDetailMsg:
 		m.showPostDetail = true
@@ -208,7 +260,7 @@ func (m *ClassRoomModel) View() string {
 	var detailView string
 	if selectedCourse != nil && selectedCourse.CoursePostListModel != nil {
 		detailView = selectedCourse.View()
-	} else {	
+	} else {
 		detailView = "No Course Selected"
 	}
 

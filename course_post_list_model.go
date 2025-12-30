@@ -81,9 +81,11 @@ func (cplm *CoursePostListModel) SetSize(width, height int) {
 	listHeight := height - windowPadding
 	listWidth := width - cplm.windowStyle.GetHorizontalPadding() - cplm.windowStyle.GetHorizontalBorderSize()
 
-	// Update size for all tab lists
+	// Update size for all tab lists and trigger their update to re-render
 	for i := range cplm.PostTabList {
-		cplm.PostTabList[i].SetSize(listWidth - 4, listHeight)
+		cplm.PostTabList[i].SetSize(listWidth-4, listHeight)
+		// Force an update cycle by passing a window size message
+		cplm.PostTabList[i], _ = cplm.PostTabList[i].Update(tea.WindowSizeMsg{Width: listWidth - 4, Height: listHeight})
 	}
 }
 

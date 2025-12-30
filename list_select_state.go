@@ -14,6 +14,9 @@ type selectedPaneState struct {
 	pane *CourseListPane
 }
 
+// ============================================
+// Implements ListSelectedState interface
+// ============================================
 func (s *selectedPaneState) SelectStyleSet() {}
 func (s *selectedPaneState) UnselectStyleSet() {
 	p := s.pane
@@ -43,6 +46,9 @@ type unselectedPaneState struct {
 	pane *CourseListPane
 }
 
+// ============================================
+// Implements ListSelectedState interface
+// ============================================
 func (u *unselectedPaneState) UnselectStyleSet() {}
 func (u *unselectedPaneState) SelectStyleSet() {
 	p := u.pane
@@ -62,6 +68,9 @@ type initializedPaneState struct {
 	pane *CourseListPane
 }
 
+// ============================================
+// Implements ListSelectedState interface
+// ============================================
 func (i *initializedPaneState) SelectStyleSet() {
 	p := i.pane
 

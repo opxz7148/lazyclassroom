@@ -32,3 +32,6 @@ go.work.sum
 # .vscode/
 
 lazyclassroom
+mockAnouncement.json
+mockCourseWork.json
+mockMaterial.json

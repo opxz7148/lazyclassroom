@@ -592,5 +592,1274 @@
       "id": "617380623957", 
       "descriptionHeading": "01219118 Discrete Mathematics and Linear Algebra First Semester 2023"
     }
+  ],
+  "announcements": [
+    {
+      "courseId": "791077055722",
+      "id": "832310985111",
+      "text": "Please BRING a 2B pencil to the final exam.\n\nFinal Exam: Thursday 4 December at 9.00 - 12.00 at Building 11 Room s603 and s604. (Same room as our midterm exam)\n\nThe exam will be divided into 2 parts:\n\nMultiple-choice questions (Need a 2B pencil to fill in an answer sheet.)\nShort-answer questions\nIt is a closed book exam. The exam content will be from Lecture 9 - 14. There will be NO questions related to Java Spring Boot.",
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/p/ODMyMzEwOTg1MTEx",
+      "creationTime": "2025-12-03T06:54:12.552Z",
+      "updateTime": "2025-12-03T06:55:57.752Z",
+      "creatorUserId": "109565533686009791405"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "831107577427",
+      "text": "Tomorrow at 16.00 hrs, I will post a Google Sheet link for you to choose a time slot for this Friday project presentation.",
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/p/ODMxMTA3NTc3NDI3",
+      "creationTime": "2025-11-25T13:41:03.393Z",
+      "updateTime": "2025-11-25T13:43:01.828Z",
+      "creatorUserId": "109565533686009791405"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "823378922939",
+      "text": "I have uploaded videos from our class today to the same Video folder. \n\nThere is no homework for this week's security testing lecture. However, you will have to  do SAST and DAST for the class project.",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1PadrdTzssD6-W3-RzO8CLQ5oLQnt8ZTy",
+              "title": "videos",
+              "alternateLink": "https://drive.google.com/drive/folders/1PadrdTzssD6-W3-RzO8CLQ5oLQnt8ZTy"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/p/ODIzMzc4OTIyOTM5",
+      "creationTime": "2025-11-07T09:14:46.298Z",
+      "updateTime": "2025-11-07T09:16:11.780Z",
+      "creatorUserId": "109565533686009791405"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "823344203573",
+      "text": "The OWASP Top Ten 2025 is newly released in the past couple hours! Let's check it out today.",
+      "materials": [
+        {
+          "link": {
+            "url": "https://owasp.org/www-project-top-ten/",
+            "title": "OWASP Top Ten Web Application Security Risks | OWASP Foundation",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://owasp.org/www-project-top-ten/"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/p/ODIzMzQ0MjAzNTcz",
+      "creationTime": "2025-11-07T02:07:34.607Z",
+      "updateTime": "2025-11-07T02:08:34.441Z",
+      "creatorUserId": "109565533686009791405"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "821955997690",
+      "text": "Gmail-Linked Credentials Exposed in Massive Breach",
+      "materials": [
+        {
+          "link": {
+            "url": "https://www.techrepublic.com/article/news-183m-gmail-accounts-breach/",
+            "title": "Just a moment...",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.techrepublic.com/article/news-183m-gmail-accounts-breach/"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/p/ODIxOTU1OTk3Njkw",
+      "creationTime": "2025-10-31T03:36:54.203Z",
+      "updateTime": "2025-10-31T03:36:55.293Z",
+      "creatorUserId": "109565533686009791405"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "812172902705",
+      "text": "For anyone whose IntelliJ cannot find org.springframework.context, try using this dependency instead:\n```xml\n\u003cdependency\u003e\n\u003cgroupId\u003eorg.springframework.boot\u003c/groupId\u003e\n \u003cartifactId\u003espring-boot-starter\u003c/artifactId\u003e\n \u003cversion\u003e3.5.6\u003c/version\u003e \u003c!-- or the latest released Spring Boot version --\u003e \n \u003c/dependency\u003e\n```",
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/p/ODEyMTcyOTAyNzA1",
+      "creationTime": "2025-10-10T03:58:23.820Z",
+      "updateTime": "2025-10-10T03:58:23.819Z",
+      "creatorUserId": "115704101255819753364"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "811764703407",
+      "text": "Reminder: we will have our class this Friday. It'll be a hybrid class. There will be both onsite and online class. For those who will attend an online class, please click the \"Join\" button in this classroom page.\n\nPlease install Java + IDE before this Friday class.",
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/p/ODExNzY0NzAzNDA3",
+      "creationTime": "2025-10-08T09:07:57.597Z",
+      "updateTime": "2025-10-08T09:07:57.596Z",
+      "creatorUserId": "109565533686009791405"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "810468081612",
+      "text": "Due to commencement rehearsals this week, there will be no class this Friday. However, since the commencement ends next Thursday, we will have our class next Friday. I will make it a hybrid class next Friday just in case.",
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/p/ODEwNDY4MDgxNjEy",
+      "creationTime": "2025-10-01T14:36:15.265Z",
+      "updateTime": "2025-10-01T14:36:15.264Z",
+      "creatorUserId": "109565533686009791405"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "807617413533",
+      "text": "After midterm exam, we will be learning secure software development through Java Spring Boot and Spring Security. To prepare, you will need to do the followings.\n1. Install Java. You can either install Java 21 or Java 25. (I am still on 21.)\n2. Install IDE. There are two options.\n        - Option 1: Install IntelliJ (https://www.jetbrains.com/idea/). As a student, you can get the Ultimate version for free. (https://www.jetbrains.com/academy/student-pack/).\n        - Option 2: Use any IDEs of your choice, but you need to install Maven (https://maven.apache.org/). Download, unarchive, and set path to maven bin folder.",
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/p/ODA3NjE3NDEzNTMz",
+      "creationTime": "2025-09-19T05:00:04.155Z",
+      "updateTime": "2025-09-29T03:00:11.248Z",
+      "creatorUserId": "109565533686009791405"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "809033021419",
+      "text": "Midterm Exam: Friday 26 Sept at 9.00 - 12.00 at Building 11 Room s603 and s604.\n\nThe exam will be divided into 2 parts:\nMultiple-choice questions (to fill in an answer sheet.)\nShort-answer questions\nIt is a  exam. You are not allowed to bring any class materials to the exam. The exam content will be from Lecture 1 - 7. There will be questions related to the  that you've learned via  as well. \n\nAgain, please bring and notice the exam building will be Building 11, not our usual Computer Engineering Building.\n",
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/p/ODA5MDMzMDIxNDE5",
+      "creationTime": "2025-09-25T05:20:27.206Z",
+      "updateTime": "2025-09-25T05:20:27.205Z",
+      "creatorUserId": "109565533686009791405"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "780615749951",
+      "text": "Cybersecurity Certification Exam:\n\nhttps://www.isc2.org/certifications/cc",
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/p/NzgwNjE1NzQ5OTUx",
+      "creationTime": "2025-09-19T02:48:12.711Z",
+      "updateTime": "2025-09-19T03:23:54.204Z",
+      "creatorUserId": "109565533686009791405"
+    }
+  ],
+  "courseWork": [
+    {
+      "courseId": "791077055722",
+      "id": "813249844237",
+      "title": "Project: Secure your application",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1uZVCXSIgaMIX7wmMmaocTB_2pIiAgSZTmnSoE7wUhD8",
+              "title": "01219325 Project Assignment 2025",
+              "alternateLink": "https://docs.google.com/document/d/1uZVCXSIgaMIX7wmMmaocTB_2pIiAgSZTmnSoE7wUhD8/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBPO-fnCG4lQ7h2zF5RWq6UBmjY39ty8ydv1eJQJ7P9KuWaX-Ej3O7dS4zqW-bj2P6tOKo7AEFUyaIpR78tjCLU_TCVmwMniLzAfJQ8T-sO1WRy9V4WtxjpIiY2CgdQYrpF9YFI=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/a/ODEzMjQ5ODQ0MjM3/details",
+      "creationTime": "2025-10-17T02:06:41.879Z",
+      "updateTime": "2025-12-22T18:09:16.963Z",
+      "dueDate": {
+        "year": 2025,
+        "month": 11,
+        "day": 28
+      },
+      "dueTime": {
+        "hours": 2
+      },
+      "maxPoints": 100,
+      "workType": "ASSIGNMENT",
+      "submissionModificationMode": "MODIFIABLE_UNTIL_TURNED_IN",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "813250706629"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "830346942446",
+      "title": "Assignment 6: Frontend and OAuth",
+      "description": "Finish the frontend integration and Google OAuth (lab 8 - 9). Also add the following.\nAdd role to UserInfoResponse, so that the frontend can generate different menus for users and admins.\nAdd a page with a form for creating a new Restaurant.\nSubmit your code here via GitHub link or .zip files.",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1D6VimXxtn_lQFCUWB1XhkXjfqEkiQSd_QxXDw4DF1JY",
+              "title": "Lab 8 - Frontend",
+              "alternateLink": "https://docs.google.com/document/d/1D6VimXxtn_lQFCUWB1XhkXjfqEkiQSd_QxXDw4DF1JY/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBPjx-kTxUksiGrcLGqXv5i7DqYXbFM-XJ79oi8DmvVThwer0e-Iu2-je70Cu8EqTI8SWytipN5uO-w2eNwaqXulYPFS4F-5infZ-sU2qwkGmc0TvcznNuIgaRyKExXv5dLwp_0=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1eNFZ3w2xhxV3LhwgmJDJo4FrORAYtmCFxVcWtRt8cO8",
+              "title": "Lab 9 - Google OAuth Login",
+              "alternateLink": "https://docs.google.com/document/d/1eNFZ3w2xhxV3LhwgmJDJo4FrORAYtmCFxVcWtRt8cO8/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBOURb-B9d0He-oNvwh_MwpgZbL2YofcEUZMxmi33JscH5jxYIihw0U5-5Ns1c_a-qfwGjqs3nfxVKYY-DgXIJvct9EXDvWLqfj-DPNIBrTEgKgRCorcJNMWHk4ByvqcdGP6W_E=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/a/ODMwMzQ2OTQyNDQ2/details",
+      "creationTime": "2025-11-21T01:56:00.296Z",
+      "updateTime": "2025-12-22T15:31:20.778Z",
+      "dueDate": {
+        "year": 2025,
+        "month": 12,
+        "day": 13
+      },
+      "dueTime": {
+        "hours": 16,
+        "minutes": 59
+      },
+      "maxPoints": 100,
+      "workType": "ASSIGNMENT",
+      "submissionModificationMode": "MODIFIABLE_UNTIL_TURNED_IN",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "802009975840"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "820254663993",
+      "title": "Assignment 5: Secure API",
+      "description": "Follow lab 2 - 5 before Friday. Also add following exception handlers and logs to improve code and security.\nChange the catch clauses in the JwtUtil, JwtAuthFilterl class to use exception handlers in the GlobalExceptionHandler class as well.\nAdd logs for access control (authorization) - here, we need to log the roles of the person who is signing in.\n(Optional) Refactor the AuthenticationController and UserService class to throw the name EntityExistsException when trying to create a user with an existing username. It will make our code cleaner.\nSubmit your code here via GitHub link or .zip files.",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "159N8JsjXid_mtVKp1XIprHVbu3qE4B5JOfBKQHei3k0",
+              "title": "Lab 2 - Spring API Authentication with JWT",
+              "alternateLink": "https://docs.google.com/document/d/159N8JsjXid_mtVKp1XIprHVbu3qE4B5JOfBKQHei3k0/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBPpO057EPBZQaL9FmvoPy6nDry2lnLgtFmLTj-Ilgmv0ueyMXtYXlNsjl5Sbx9zMIIXcPtR9wo37LslnHSInyTUDcyTOt2cxyQ73SEQ5MMAXLGAU1sO6txkStQDPvyjs3YQ7Gk=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1Ar1bYrIbMt3Yp9eC0W-dFnT99F1Qw2PjeguMP5MfFdk",
+              "title": "Lab 3 - Authorization",
+              "alternateLink": "https://docs.google.com/document/d/1Ar1bYrIbMt3Yp9eC0W-dFnT99F1Qw2PjeguMP5MfFdk/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBOuaAjkM9teJeS2ZG_6Re7wBF60gZLiytHhtfkp6ja9sEY_3mBArc96BqU37XSOKAj_Qz-yDfqrBIzr3arB-Q_IIwk-wbZQ09btiAMNTOxCfz6NM9DFUnfuw_n5jtbTdo5iYkE=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1LpJQWNKNoyUrzGBUu1k6ysy7HPf_xbu4KqjkQEw8b-s",
+              "title": "Lab 4 - Pagination",
+              "alternateLink": "https://docs.google.com/document/d/1LpJQWNKNoyUrzGBUu1k6ysy7HPf_xbu4KqjkQEw8b-s/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBOT94xWpvHXDNvuHrLLEGRIhMsbLbXAhzWdNu8YEmpHhPe7i3O5SGfFp1M9m7355bzpLyyq38kNTCdpdXHnbO5oUeiUmLo6-4DykUMnc3_zYhtxMDS7CbELG00wFWeIF_t7QCU=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1_BJdtFbJ8YLsnwUImgbnl6uJ9pROg0XxMzRhCLbFxPM",
+              "title": "Lab 5 - Input Validation, Error Handling, Logging",
+              "alternateLink": "https://docs.google.com/document/d/1_BJdtFbJ8YLsnwUImgbnl6uJ9pROg0XxMzRhCLbFxPM/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBP0EyJ1vvSBurbpgA4AjpkqvGO-yQLT0PBim2rBlRIxrYx4oqb37CZ0N0jugFgiFWtc408q7ThPySNVsKak1GUp23bGfmst_s_d02D1_-MsEYte61tKwL6ugRPRQFzrBa_qKYs=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/a/ODIwMjU0NjYzOTkz/details",
+      "creationTime": "2025-11-03T12:51:31.995Z",
+      "updateTime": "2025-12-22T15:31:08.027Z",
+      "dueDate": {
+        "year": 2025,
+        "month": 11,
+        "day": 6
+      },
+      "dueTime": {
+        "hours": 16,
+        "minutes": 59
+      },
+      "maxPoints": 100,
+      "workType": "ASSIGNMENT",
+      "submissionModificationMode": "MODIFIABLE_UNTIL_TURNED_IN",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "802009975840"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "802017911365",
+      "title": "Assignment 1.2: At-home Security Requirement ",
+      "description": "Continue working on the rest of your security requirements",
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/a/ODAyMDE3OTExMzY1/details",
+      "creationTime": "2025-09-05T04:38:12.657Z",
+      "updateTime": "2025-12-21T12:33:07.859Z",
+      "dueDate": {
+        "year": 2025,
+        "month": 9,
+        "day": 18
+      },
+      "dueTime": {
+        "hours": 16,
+        "minutes": 59
+      },
+      "maxPoints": 100,
+      "workType": "ASSIGNMENT",
+      "submissionModificationMode": "MODIFIABLE_UNTIL_TURNED_IN",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "802009975840"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "813591674472",
+      "title": "Assignment 1.1: In-class Security Requirement ",
+      "description": "It's a group assignment. Form the same group as the CSP class. Only one group member has to submit the assignment. Please list all team member in the submitted Excel/GG Sheet file.\n\nhttps://owasp.org/www-project-application-security-verification-standard/",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1_BnHD2UbX8MXv6RVsqWHYIXjjv4ROI3w",
+              "title": "assignment-1-requirement.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1_BnHD2UbX8MXv6RVsqWHYIXjjv4ROI3w/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOqSeVUtZ187YWiTg-EMBCL23r8u7plSLLFTKhdD_tEDYbJuFbBxepuApC7bDCndXcjYkhY6iPqYSdNmZCWfxt38E8iTtSn7bZXQvxCf1g4oxw=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/a/ODEzNTkxNjc0NDcy/details",
+      "creationTime": "2025-09-05T03:40:18.224Z",
+      "updateTime": "2025-12-21T12:18:25.030Z",
+      "dueDate": {
+        "year": 2025,
+        "month": 9,
+        "day": 5
+      },
+      "dueTime": {
+        "hours": 4,
+        "minutes": 59
+      },
+      "maxPoints": 100,
+      "workType": "ASSIGNMENT",
+      "submissionModificationMode": "MODIFIABLE_UNTIL_TURNED_IN",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "802009975840"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "831105050018",
+      "title": "Choose a time slot for this Friday Project Presentation",
+      "description": "For the Project Presentation on Friday 28 Nov., please choose a presentation time slot by filling out names of all team members in the following Google Sheets. (Must log in with @ku.th)\n\nhttps://docs.google.com/spreadsheets/d/1GKMd1hHwzQ41syVd4cgCWvROy_ByvY5RPjE04jepVUU/edit?usp=sharing",
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/a/ODMxMTA1MDUwMDE4/details",
+      "creationTime": "2025-11-25T13:36:03.882Z",
+      "updateTime": "2025-11-26T09:01:59.163Z",
+      "dueDate": {
+        "year": 2025,
+        "month": 11,
+        "day": 27
+      },
+      "dueTime": {
+        "hours": 16,
+        "minutes": 59
+      },
+      "workType": "ASSIGNMENT",
+      "submissionModificationMode": "MODIFIABLE_UNTIL_TURNED_IN",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "813250706629"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "812186669683",
+      "title": "Assignment 4: Intro to Spring Boot",
+      "description": "Please finish the rest of the lab before next Friday. Submit your code here via GitHub link or .zip files.\n\nAlso, please make a contribution by adding to the below Padlet your thoughts about what is already secured, what is not, and how to make it more secured. ",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1nuN-sdKaYPzDkKNWF6e1Qkuu_r0aSxggpRmEd4WtaaA",
+              "title": "Lab 1 - Spring Web API with Spring Data (JPA)",
+              "alternateLink": "https://docs.google.com/document/d/1nuN-sdKaYPzDkKNWF6e1Qkuu_r0aSxggpRmEd4WtaaA/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBNDSG4rjVwYpyWsFWrnPMZIgYctkU-rFTJ_QVpdaxgoI9kmHhbyiD0qXJ1Ua6mpXBCdRVMwzfwqurIErWmXCvo0CrFQE-gzf3sf9s0Jp_1nTGRyoC7F7e8AgRcW3cFljR2kaQM=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "link": {
+            "url": "https://padlet.com/usa_sa/secured-api-mpa1ujh736hrnxit",
+            "title": "Secured API",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://padlet.com/usa_sa/secured-api-mpa1ujh736hrnxit"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/a/ODEyMTg2NjY5Njgz/details",
+      "creationTime": "2025-10-10T07:25:31.108Z",
+      "updateTime": "2025-10-10T07:46:51.252Z",
+      "dueDate": {
+        "year": 2025,
+        "month": 10,
+        "day": 16
+      },
+      "dueTime": {
+        "hours": 16,
+        "minutes": 59
+      },
+      "maxPoints": 100,
+      "workType": "ASSIGNMENT",
+      "submissionModificationMode": "MODIFIABLE_UNTIL_TURNED_IN",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "802009975840"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "807614510813",
+      "title": "Assignment 3.4: Review Q - Security Design Principles / Secure Model",
+      "materials": [
+        {
+          "link": {
+            "url": "https://forms.office.com/Pages/ResponsePage.aspx?id=6jIYjG2pPkG_fZ_k1gjgC2HxFO6NPtNGkU9WSO0AdeJUQUhRNlhNMUVTOTJEWjVIMjIxVUNHN1RRUi4u",
+            "title": "Microsoft Forms",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://forms.office.com/Pages/ResponsePage.aspx?id%3D6jIYjG2pPkG_fZ_k1gjgC2HxFO6NPtNGkU9WSO0AdeJUQUhRNlhNMUVTOTJEWjVIMjIxVUNHN1RRUi4u"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/a/ODA3NjE0NTEwODEz/details",
+      "creationTime": "2025-09-19T04:27:39.283Z",
+      "updateTime": "2025-09-19T04:28:40.050Z",
+      "dueDate": {
+        "year": 2025,
+        "month": 9,
+        "day": 25
+      },
+      "dueTime": {
+        "hours": 16,
+        "minutes": 59
+      },
+      "maxPoints": 100,
+      "workType": "ASSIGNMENT",
+      "submissionModificationMode": "MODIFIABLE_UNTIL_TURNED_IN",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "802009975840"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "807614851372",
+      "title": "Assignment 3.3: Review Q - Threat and Threat Modeling",
+      "materials": [
+        {
+          "link": {
+            "url": "https://forms.office.com/r/pV1qH0u6k2",
+            "title": "Microsoft Forms",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://forms.office.com/r/pV1qH0u6k2"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/a/ODA3NjE0ODUxMzcy/details",
+      "creationTime": "2025-09-19T04:25:55.906Z",
+      "updateTime": "2025-09-19T04:27:33.193Z",
+      "dueDate": {
+        "year": 2025,
+        "month": 9,
+        "day": 25
+      },
+      "dueTime": {
+        "hours": 16,
+        "minutes": 59
+      },
+      "maxPoints": 100,
+      "workType": "ASSIGNMENT",
+      "submissionModificationMode": "MODIFIABLE_UNTIL_TURNED_IN",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "802009975840"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "780616727998",
+      "title": "Assignment 3.2: Review Q - IT Laws, Regulations, and Compliance",
+      "materials": [
+        {
+          "link": {
+            "url": "https://forms.office.com/Pages/ResponsePage.aspx?id=6jIYjG2pPkG_fZ_k1gjgC2HxFO6NPtNGkU9WSO0AdeJUMExNNUgzVjNKUFVGOVlMRUVKSDBQN1pNOC4u",
+            "title": "Microsoft Forms",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://forms.office.com/Pages/ResponsePage.aspx?id%3D6jIYjG2pPkG_fZ_k1gjgC2HxFO6NPtNGkU9WSO0AdeJUMExNNUgzVjNKUFVGOVlMRUVKSDBQN1pNOC4u"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/a/NzgwNjE2NzI3OTk4/details",
+      "creationTime": "2025-09-19T04:24:12.206Z",
+      "updateTime": "2025-09-19T04:25:28.469Z",
+      "dueDate": {
+        "year": 2025,
+        "month": 9,
+        "day": 25
+      },
+      "dueTime": {
+        "hours": 16,
+        "minutes": 59
+      },
+      "maxPoints": 100,
+      "workType": "ASSIGNMENT",
+      "submissionModificationMode": "MODIFIABLE_UNTIL_TURNED_IN",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "802009975840"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "807614414584",
+      "title": "Assignment 3.1: Review Q - Information Security Principles",
+      "materials": [
+        {
+          "link": {
+            "url": "https://forms.office.com/Pages/ResponsePage.aspx?id=6jIYjG2pPkG_fZ_k1gjgC2HxFO6NPtNGkU9WSO0AdeJUQkVSN1EzTlRaSk1PMDY0VDVSWVRSNFRSRi4u",
+            "title": "Microsoft Forms",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://forms.office.com/Pages/ResponsePage.aspx?id%3D6jIYjG2pPkG_fZ_k1gjgC2HxFO6NPtNGkU9WSO0AdeJUQkVSN1EzTlRaSk1PMDY0VDVSWVRSNFRSRi4u"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/a/ODA3NjE0NDE0NTg0/details",
+      "creationTime": "2025-09-19T04:22:03.093Z",
+      "updateTime": "2025-09-19T04:24:05.636Z",
+      "dueDate": {
+        "year": 2025,
+        "month": 9,
+        "day": 25
+      },
+      "dueTime": {
+        "hours": 16,
+        "minutes": 59
+      },
+      "maxPoints": 100,
+      "workType": "ASSIGNMENT",
+      "submissionModificationMode": "MODIFIABLE_UNTIL_TURNED_IN",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "802009975840"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "805868272974",
+      "title": "Assignment 2: Self Study: Threat Modeling by Microsoft",
+      "description": "Let’s learn the threat modeling concept in details via Microsoft learning path. Please go to this website:\n\n\n\nhttps://docs.microsoft.com/en-us/learn/paths/tm-threat-modeling-fundamentals/\n\n\n\nThis is a Microsoft learning path that guides you through the four main phases of threat modeling. There are 7 modules in this learning path. Please go through all 7 modules (as follows) and answer all questions in the modules. \n\n\nIntroduction to threat modeling\nCreate a threat model using data-flow diagram elements\nProvide context with the right depth layer\nApproach your data-flow diagram with the right threat model focus\nUse a framework to identify threats and find ways to reduce or eliminate risk\nPrioritize your issues and apply security controls\nUse recommended tools to create a data-flow diagram\n\n\nTo submit this assignment, please capture screen showing your email and the XP you've received after completing the modules (similar to the attached file.)",
+      "materials": [
+        {
+          "link": {
+            "url": "https://docs.microsoft.com/en-us/learn/paths/tm-threat-modeling-fundamentals/",
+            "title": "Threat Modeling Security Fundamentals - Training | Microsoft Learn",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://docs.microsoft.com/en-us/learn/paths/tm-threat-modeling-fundamentals/"
+          }
+        },
+        {
+          "link": {
+            "url": "https://o365ku.sharepoint.com/:i:/s/325SoftwareDevSecurity2023/ET1WK4M1-cJNvmdWzUUwXBIBhWrl2z4OZz1TD2SA0w75uw?e=ydk0pH",
+            "title": "Sign in to your account",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://o365ku.sharepoint.com/:i:/s/325SoftwareDevSecurity2023/ET1WK4M1-cJNvmdWzUUwXBIBhWrl2z4OZz1TD2SA0w75uw?e%3Dydk0pH"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/a/ODA1ODY4MjcyOTc0/details",
+      "creationTime": "2025-09-12T04:38:39.997Z",
+      "updateTime": "2025-09-12T04:41:12.415Z",
+      "dueDate": {
+        "year": 2025,
+        "month": 9,
+        "day": 21
+      },
+      "dueTime": {
+        "hours": 16,
+        "minutes": 59
+      },
+      "maxPoints": 100,
+      "workType": "ASSIGNMENT",
+      "submissionModificationMode": "MODIFIABLE_UNTIL_TURNED_IN",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "802009975840"
+    }
+  ],
+  "courseWorkMaterial": [
+    {
+      "courseId": "791077055722",
+      "id": "830347145017",
+      "title": "Lecture 14: OAuth, OpenID, SSL/TLS",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1bVr1yseN-hJzBB9KNWw1suQjp1nhG5-6",
+              "title": "Lec 14 OAuth_OpenID and SSL_TLS.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1bVr1yseN-hJzBB9KNWw1suQjp1nhG5-6/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBO20zxq_GDJVKg1Aef7oo0sQFwXw6THXVbenHI7rLZK3lWFBCDAg92_a8l3IHl1SMHcWft8dTux68aX_vvDP6aw9AtmNEf2Dv5HK0Pv8Zu6Vtg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1eNFZ3w2xhxV3LhwgmJDJo4FrORAYtmCFxVcWtRt8cO8",
+              "title": "Lab 9 - Google OAuth Login",
+              "alternateLink": "https://docs.google.com/document/d/1eNFZ3w2xhxV3LhwgmJDJo4FrORAYtmCFxVcWtRt8cO8/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBPdC3z1dD2ypj9Ny0WlIcHjRxk83kE1LVVKCoPgtL_PcdUaqb6Tw0bzsW0ZkK4enZi1MqDYiXZhNHlJ_ndwN3pjw9_cTUMxCmRTvjhFEsfrEUTaPkIEPyx7opBhzu-L-Sg9qgw=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1ndKs-wpc_xbGCXKQhZAVkom40n12-yq55sSKGV5hOsU",
+              "title": "Lab 10 - Create and Sign Digital Certificate",
+              "alternateLink": "https://docs.google.com/document/d/1ndKs-wpc_xbGCXKQhZAVkom40n12-yq55sSKGV5hOsU/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBNtP_MS7p8bz5wUOI0jzVQfmB8LmYyYNK4yFn95Qa5L96CbWy0d9hTF__2iWKj2T2A0eQk8UAnPj19vqpQxPX5C7oJ6WS7RNT1vRSLdtT3gPSZGW5oMCTn2ViJvM4CbkM5MIGQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODMwMzQ3MTQ1MDE3/details",
+      "creationTime": "2025-11-21T01:52:45.004Z",
+      "updateTime": "2025-11-21T01:54:35.930Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "828928409177",
+      "title": "Lecture 13: CORS, Cookie, HTTP Security Header with Frontend lab",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1_qyHWdMYy6vA9VYv0BY1mD1j8RMyFiG3",
+              "title": "Lec 13 CORS, HTTP Security Header.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1_qyHWdMYy6vA9VYv0BY1mD1j8RMyFiG3/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPI6sY2NsNHdnZdIqyA_aQTH0PnSA8n-pc_HYQdG7-kqFxDAlf9f10rL9yCnzaI_iD5SU-eEsklxFW2TX2P9TVLeDnDdUJetPNoAmagCb-GRcU=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1D6VimXxtn_lQFCUWB1XhkXjfqEkiQSd_QxXDw4DF1JY",
+              "title": "Lab 8 - Frontend",
+              "alternateLink": "https://docs.google.com/document/d/1D6VimXxtn_lQFCUWB1XhkXjfqEkiQSd_QxXDw4DF1JY/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBOleZAjSc-qNU3UNCmxZ0v72UVKjL7RvgBUoZGguTLxr-NziPYVOHmq_Kkw9wmkeK1NgzKcA2lNw_jUbxUikPqSJHN9TBx5uG9LjtilsFUqjkmlnEzVpHXOPbqR9tK68LEWnww=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODI4OTI4NDA5MTc3/details",
+      "creationTime": "2025-11-13T18:43:47.005Z",
+      "updateTime": "2025-11-14T02:03:52.459Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "823344685245",
+      "title": "Lecture 12: Security Testing",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "19PjfKz2SoueT0HfPVOwqBSr42cHVrROG",
+              "title": "Lec 12 Security Testing.pdf",
+              "alternateLink": "https://drive.google.com/file/d/19PjfKz2SoueT0HfPVOwqBSr42cHVrROG/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBP2WgtlvTFSEotrCRJk_VmQPG6fIoSVc_cEW4bnma4U5hKG0mWtN4MZocCsm9A8RZAk9fGll0lMbJUODfw_79-mF2XNRdIinlJm2ehBKS7PgfU=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "link": {
+            "url": "https://www.youtube.com/playlist?list=PLFCfNaHOd4AJz8oX587Vu4JfB6crp64QV",
+            "title": "Security Testing - YouTube",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.youtube.com/playlist?list%3DPLFCfNaHOd4AJz8oX587Vu4JfB6crp64QV"
+          }
+        },
+        {
+          "link": {
+            "url": "https://ladyusa.notion.site/SAST-Tools-2a3f199d3b1580d99cebda48b4e496ad?source=copy_link",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://ladyusa.notion.site/SAST-Tools-2a3f199d3b1580d99cebda48b4e496ad?source%3Dcopy_link"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODIzMzQ0Njg1MjQ1/details",
+      "creationTime": "2025-11-07T02:04:47.662Z",
+      "updateTime": "2025-11-07T03:50:24.987Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "821966180444",
+      "title": "Videos",
+      "description": "All videos have been posted here.",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1PadrdTzssD6-W3-RzO8CLQ5oLQnt8ZTy",
+              "title": "videos",
+              "alternateLink": "https://drive.google.com/drive/folders/1PadrdTzssD6-W3-RzO8CLQ5oLQnt8ZTy"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODIxOTY2MTgwNDQ0/details",
+      "creationTime": "2025-10-31T05:39:23.089Z",
+      "updateTime": "2025-10-31T05:39:45.705Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "821863111560",
+      "title": "Lecture 11: Input Validation, Error Handling, Logging, Database Encryption",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1F2ZkyvjkZnxuHrGdxFBluROlUK_ixV9_",
+              "title": "Lec 11 Database Encryption.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1F2ZkyvjkZnxuHrGdxFBluROlUK_ixV9_/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNNO5NJh9uv3Vc4eqVyt5Tjin8c-7W_5rU5R1NmaT6tYgCv58y6P6QphAWMj0fjrWaYuIs-Ip7gTpWcA_pOvBeiWQqAZpmIbhUX2U5KsbWvXXU=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1_BJdtFbJ8YLsnwUImgbnl6uJ9pROg0XxMzRhCLbFxPM",
+              "title": "Lab 5 - Input Validation, Error Handling, Logging",
+              "alternateLink": "https://docs.google.com/document/d/1_BJdtFbJ8YLsnwUImgbnl6uJ9pROg0XxMzRhCLbFxPM/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBNJgsjAY9pGyFnduzRKKYbhKzNDlA-CBswYKLg9Wg9WJ3GApT9ej_hUAMFwpQZi9KUIzeJ6IuaI6eZwDztvV1cbISJkMt6-WdMWv_-UHinPcff_PookJJYwimDMGURDxw9OBYg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "100E2-q7eD-Z0Su09BNMZmPFseh-Sm4ZJEVKxxLxy8gI",
+              "title": "Lab 6 - Database Encryption",
+              "alternateLink": "https://docs.google.com/document/d/100E2-q7eD-Z0Su09BNMZmPFseh-Sm4ZJEVKxxLxy8gI/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBM0HVSbfgOnqqgw8o64tEFnBiXF29LszJI-kdO2hK7jhPk1vlTVqXbDLBCTFWbsqeglqK6WfYY_oSR-6-EF88JfjRSFnYrtAyNHCKZaEhBCnaQX53ZDvaZmosvVwOW8K7_kopQ=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODIxODYzMTExNTYw/details",
+      "creationTime": "2025-10-30T17:40:43.110Z",
+      "updateTime": "2025-10-31T02:02:32.948Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "816735610996",
+      "title": "Lecture 10: Authorization, Pagination",
+      "materials": [
+        {
+          "link": {
+            "url": "https://delinea.com/blog/access-control-models-methods",
+            "title": "Access Control Models and Methods | Types of Access Control",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://delinea.com/blog/access-control-models-methods"
+          }
+        },
+        {
+          "link": {
+            "url": "https://www.avigilon.com/blog/access-control-models",
+            "title": "Discretionary, Mandatory, Role and Rule Based Access Control",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.avigilon.com/blog/access-control-models"
+          }
+        },
+        {
+          "link": {
+            "url": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes",
+            "title": "List of HTTP status codes - Wikipedia",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://en.wikipedia.org/wiki/List_of_HTTP_status_codes"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1Ar1bYrIbMt3Yp9eC0W-dFnT99F1Qw2PjeguMP5MfFdk",
+              "title": "Lab 3 - Authorization",
+              "alternateLink": "https://docs.google.com/document/d/1Ar1bYrIbMt3Yp9eC0W-dFnT99F1Qw2PjeguMP5MfFdk/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBMTLIpGuexBoq_KoQoKRoulAekvdtX75pwapYdwAk3kxguOwo6eBDjwBeB3zOhkN0Bj8WOsDhoP8siYQ1XGMkfjXenh54kXinYu8P5Tu0AgD7q6OENTiyH9HqKHputZhDAvdgg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1LpJQWNKNoyUrzGBUu1k6ysy7HPf_xbu4KqjkQEw8b-s",
+              "title": "Lab 4 - Pagination",
+              "alternateLink": "https://docs.google.com/document/d/1LpJQWNKNoyUrzGBUu1k6ysy7HPf_xbu4KqjkQEw8b-s/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBMtxiqCLnpenvTbKzDye0ODT9Ux7eUJtGmmA8LGlMtGdBetk8FuvPVO5J4CPvnEBz32q1zMfwDOD2EI155s9Ak8XzE2M5ub6aUOQC4vxiBbqTLDOkz9sfqZxUMa1uhlzkTALOA=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODE2NzM1NjEwOTk2/details",
+      "creationTime": "2025-10-24T01:50:19.244Z",
+      "updateTime": "2025-10-24T04:54:20.575Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "813184668994",
+      "title": "Lecture 9: API with JWT Authentication",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1aQIviFlpp7alqRy0Ab4CbHJ3AePcmd6T",
+              "title": "lec9-1-authen-uuid-dto.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1aQIviFlpp7alqRy0Ab4CbHJ3AePcmd6T/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOLnRgRx2VtG9G7J_qj95mYhtuQpx7nn4U5PDbsH0R5cG6kcQr--DpqTVpWWdMKe16pMW1TD7nUY5OxYMyVIGhhm6Omjm-wShAsRPu_y12hTCY=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1CZ-tDuz2bktmRni3Kdr2p4iECC0idC5V",
+              "title": "lec9-2-spring-security.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1CZ-tDuz2bktmRni3Kdr2p4iECC0idC5V/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBP35xo1vP5R7aofH6GwUEDmOISQW1nJvpibF4Z6YUNGQzuT0cfK8E2LL58b0h5aJlmMKSw7_NKtGBhkExWt0kT6YGnF1NaeK6XSEoQl1T7h6kk=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "159N8JsjXid_mtVKp1XIprHVbu3qE4B5JOfBKQHei3k0",
+              "title": "Lab 2 - Spring API Authentication with JWT",
+              "alternateLink": "https://docs.google.com/document/d/159N8JsjXid_mtVKp1XIprHVbu3qE4B5JOfBKQHei3k0/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBNqv8gu6QZskVPbJrgTTTzvYas9dTEE2LXRwolULB36J_Z0BI2lpkfYKWxc2Kw77a8qN0yUkeijuy0gDcij169NiIVB3_tW5E-OC4i9IAYHsQCXhNVYtW-Xd0UEMdYuuenkCvg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODEzMTg0NjY4OTk0/details",
+      "creationTime": "2025-10-16T17:29:35.388Z",
+      "updateTime": "2025-10-17T01:57:50.301Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "804145927768",
+      "title": "Lecture 8: Intro Spring Boot, Basic (insecure) API",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1v4lnx2Xym8C7tAfMKyAOYdeXIuGRokhS",
+              "title": "lec8-1-dependency-injection.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1v4lnx2Xym8C7tAfMKyAOYdeXIuGRokhS/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMB3gdIrm-ZsSdfQyhOGJslVa5d9vVxDkXzJJ4ZskvNxjk2znOrR5ArqcIdaK1Z9C-BdNJp7-wC7Mp0jz1cYTFlzs6meOfb0cv273pBlo1D-ao=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "18pkZaP0psC1Wb5fHjv8lIgNdrSFkG1mL",
+              "title": "lec8-2-spring-boot.pdf",
+              "alternateLink": "https://drive.google.com/file/d/18pkZaP0psC1Wb5fHjv8lIgNdrSFkG1mL/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBP40SRITtEDzpEWTRuXutUzy9yUF5O9y4Kw1wFNcZ-PoGWtrTIwjTVGwRUY5FDBKQjtpOTtWdX1E5AtCFjY37udpO_2EV0_ukndwYSvK4D_sxE=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1FPb6ZAgRuGjiUAJB-OKTuLil9_AXMKFB",
+              "title": "lec8-3-spring-ioc.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1FPb6ZAgRuGjiUAJB-OKTuLil9_AXMKFB/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPgV6xGKq7NXAF9TBz3u1CUuJwE78INdWgYCv901KdWWhX3xeyh3ERyHh5dnFUC_RYq0fi2gg6jJ4ZijZA206-d1YMvtnldZa53w-TZSRSfIJk=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1nuN-sdKaYPzDkKNWF6e1Qkuu_r0aSxggpRmEd4WtaaA",
+              "title": "Lab 1 - Spring Web API with Spring Data (JPA)",
+              "alternateLink": "https://docs.google.com/document/d/1nuN-sdKaYPzDkKNWF6e1Qkuu_r0aSxggpRmEd4WtaaA/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBObG-ecpkDGQ5dDvHaj1sTSygYf0NOCasY-EDc_4YSl3p1MqBI-zQRO09x7WHZ_KGzKuE0mNnLkQ4HH-1C5WnW10XM7NUazhzqKwL_6gfEnrr6CckfheBIUjDGZP_g4gA8Qd1o=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODA0MTQ1OTI3NzY4/details",
+      "creationTime": "2025-10-09T10:08:10.753Z",
+      "updateTime": "2025-10-10T02:13:03.132Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "807600160394",
+      "title": "Lecture 7: Security Design",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1_La_RFiDdndyNSfZrl031Wyz5x1XSlEV",
+              "title": "Lec 7 Software Security Design.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1_La_RFiDdndyNSfZrl031Wyz5x1XSlEV/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMirioKF0vgekXZtldveMegSjZYkgYJSi_SIN1u0D_LkR9VS3N8vVvfVHLH3T0pw6Y0AOWPLONWVkGqOlS8uqo-QjG_tKY5fAureBQz-1Nt9DE=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1jsKC-km0LZUo6l0jfcPoVgr3CQIi7JzF",
+              "title": "Lec 7 Security Patterns 1998.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1jsKC-km0LZUo6l0jfcPoVgr3CQIi7JzF/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPqS1FNcb_qw6iBMmHM_CWxsOgW5DJncArhfw11Ou387jiCGuTXRHcwSM8ewrHShdBi0S8AiqNrRklZu1Y5T5GqqadJzvfziP7tko03MkqSUrc=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1vrsQyNXdrNaQfChUxDpBlqeiluMe5F7L",
+              "title": "Lec 7 Security Patterns 2009 CMU.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1vrsQyNXdrNaQfChUxDpBlqeiluMe5F7L/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBP2CLebFvl_UlBoRsFn3Ea4LAT0pvhiISeDb7yeW_R0sn2VHL4a2TnS2bA7pCM5cxQmtuVeHjIrNvTAXOAyVsUMJYXS61uVzDP3y1mgfF2j1W0=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODA3NjAwMTYwMzk0/details",
+      "creationTime": "2025-09-19T02:08:45.828Z",
+      "updateTime": "2025-09-19T02:09:52.882Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "807599932584",
+      "title": "NCSA: Thailand (newest) Website Security Standard",
+      "description": "https://www.facebook.com/share/p/1AhNxmWSaw/",
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODA3NTk5OTMyNTg0/details",
+      "creationTime": "2025-09-19T02:04:58.305Z",
+      "updateTime": "2025-09-19T02:07:34.590Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "805846900310",
+      "title": "Lecture 6: Threats and Threat Modeling",
+      "materials": [
+        {
+          "link": {
+            "url": "https://mas.owasp.org/MASVS/",
+            "title": "OWASP MASVS - OWASP Mobile Application Security",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://mas.owasp.org/MASVS/"
+          }
+        },
+        {
+          "link": {
+            "url": "https://www.pcisecuritystandards.org/standards/pci-dss/",
+            "title": "PCI Security Standards Council – Protect Payment Data with Industry-driven Security Standards, Training, and Programs",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://www.pcisecuritystandards.org/standards/pci-dss/"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1xAoP_4sFG_kKZNceaYf8-WD71xFhL-Ue",
+              "title": "Lec 5 Security Requirement Doc",
+              "alternateLink": "https://drive.google.com/drive/folders/1xAoP_4sFG_kKZNceaYf8-WD71xFhL-Ue"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "12ELf4iYqyDWy58PqcyKO0cJM9B38s3z4",
+              "title": "Lec 6 OWASP-top10.pdf",
+              "alternateLink": "https://drive.google.com/file/d/12ELf4iYqyDWy58PqcyKO0cJM9B38s3z4/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBMn0cxYFqs48fZ7-FNrVryLsrq_hAOgJjRd5KrPv399Cax74YZOhbf548Orf8PK2njHnOe4sclsTMfVMqnl4faOy9Qx21BkL1nwRg89UWe6Kao=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1lHTI0FEz2m4P49JfTT_Xc77yOdlqbAVM",
+              "title": "Lec 6 Threat Modeling.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1lHTI0FEz2m4P49JfTT_Xc77yOdlqbAVM/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPwIMEXDpdimZ_uTgpXxo05t_ZoW4y8yMO-maDjolvvxV6dRDd_e_43beN8CTFo80K65PE2eFjoD9imHtyMaafE33cISy9z0_HxtFrOFgSA09c=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODA1ODQ2OTAwMzEw/details",
+      "creationTime": "2025-09-12T01:51:45.750Z",
+      "updateTime": "2025-09-12T02:00:40.789Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "801997183254",
+      "title": "Lecture 5: Data and OWASP ASVS",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1gITld6AghCBr_LW6G37skyYZBvUsoshq",
+              "title": "OWASP_Application_Security_Verification_Standard_5.0.0_en.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1gITld6AghCBr_LW6G37skyYZBvUsoshq/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBPgnkutFjqTRKmcH33Q9-tCSagyq_0-r0Ci1QEYdGR6PuVS9NwckfE9bnhejzUejwQMM13Mpol6A5okTBklQuaw6fRhTQPc-aOUdft1-LPvE78=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1oWjsmulgErTbtcK8a0L-dy5KOa-a0MrH",
+              "title": "OWASP_MASVS.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1oWjsmulgErTbtcK8a0L-dy5KOa-a0MrH/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNoXXc8Fl56HiGSKROP2ctbFn4Fb5g9ryu2eiXl8GWcqgm4CH5XmNCVvHz4F9716fuLUxWarwY6UiORr7_YFtKeBQlLjUAx6e_Up80No1irAx0=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        },
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1E4V0fmoEIJibC9BRmG7kfz7w8ufqncIK",
+              "title": "Lecture 5 - data-and-owasp-asvs.pdf",
+              "alternateLink": "https://drive.google.com/file/d/1E4V0fmoEIJibC9BRmG7kfz7w8ufqncIK/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBNzc2VLpRlgkNcWt66sUs7gCpm8zBVLeOndzGRWSdc6wSgWAjZmvD7hVF3iO4Nn1UTsEGX79sJYsU7xdp6MoaG2Rhjsaw5aVBj3lxPF0_iR92Q=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODAxOTk3MTgzMjU0/details",
+      "creationTime": "2025-09-05T02:13:14.808Z",
+      "updateTime": "2025-09-05T02:14:26.200Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "800574406013",
+      "title": "Lecture 4X: Cryptography Demo & Mini-Lab",
+      "materials": [
+        {
+          "link": {
+            "url": "https://github.com/LunaticNeko/demo-cryptography",
+            "title": "GitHub - LunaticNeko/demo-cryptography",
+            "thumbnailUrl": "https://classroom.google.com/webthumbnail?url=https://github.com/LunaticNeko/demo-cryptography"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODAwNTc0NDA2MDEz/details",
+      "creationTime": "2025-08-29T04:31:19.374Z",
+      "updateTime": "2025-08-29T04:31:51.071Z",
+      "creatorUserId": "103459931655688093646",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "800489029170",
+      "title": "Lecture 4: Cryptography",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1LpaMKPN4rxDTGjF5JzdyZ0foVJYavVYLg1B4GAiJ-7A",
+              "title": "Lecture 4: Cryptography",
+              "alternateLink": "https://docs.google.com/presentation/d/1LpaMKPN4rxDTGjF5JzdyZ0foVJYavVYLg1B4GAiJ-7A/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBPH2dpdvm6axACxAvDiDtedfOT8VEfsjp0PiN4ITFSuletjwLA25BuROJhWOl5u3wM1fkrbRRBr1dchYfyXQqlrhLP3c8Spgld_giHfze0vPTRQ8Zleius38QbBm1IWLfdB4mw=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/ODAwNDg5MDI5MTcw/details",
+      "creationTime": "2025-08-28T17:31:57.640Z",
+      "updateTime": "2025-08-29T01:02:32.955Z",
+      "creatorUserId": "103459931655688093646",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "799468900336",
+      "title": "Lecture 3: Intro to Security Standards (Extra Slide)",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1NmFD_ygcR-amQQ7BX1zU2nMAPYGClPGJdFwMXu1uUI4",
+              "title": "Lecture 3: Intro to Security Standards",
+              "alternateLink": "https://docs.google.com/presentation/d/1NmFD_ygcR-amQQ7BX1zU2nMAPYGClPGJdFwMXu1uUI4/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBMo-scikk3YWkM8ZKLnOFB9DvyMbHv7ZPgvnDqhRVgBpLB2p7LeTy5-xHlfvojYF9_imgstlFmPtew_VC1Zpo4HvtdjY2nv8-rX-TpYTJY0BUh1vHg2wkPh1_U3ahlvpNdvzGI=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/Nzk5NDY4OTAwMzM2/details",
+      "creationTime": "2025-08-21T21:32:48.478Z",
+      "updateTime": "2025-08-22T04:27:37.865Z",
+      "creatorUserId": "103459931655688093646",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "799505142382",
+      "title": "Lecture 3: Intro to Security Process",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "15rtmKd0qWQcSrRVak3QA6TN49nO-4DRb",
+              "title": "Lec 3 Security Requirement.pdf",
+              "alternateLink": "https://drive.google.com/file/d/15rtmKd0qWQcSrRVak3QA6TN49nO-4DRb/view?usp=drive_web",
+              "thumbnailUrl": "https://lh3.googleusercontent.com/drive-storage/AJQWtBOEqPWx4mCH4BlBdz7pRBNoAJtrBL9piQio2OP2mS2yX5G6IqRS3AMldvm_NzukVvxEe8_en4Q5nTtALqvBYZz0JhNfNxIquNdgmzubkqkGs5w=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/Nzk5NTA1MTQyMzgy/details",
+      "creationTime": "2025-08-22T01:36:56.502Z",
+      "updateTime": "2025-08-22T02:25:04.359Z",
+      "creatorUserId": "103459931655688093646",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "798524325184",
+      "title": "Lecture 2",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1XPVuvXC1MrCBuKKA40IGZisqDiqIcuZICkKJY31eXxU",
+              "title": "Lecture 2: Laws Relevant to Information Security",
+              "alternateLink": "https://docs.google.com/presentation/d/1XPVuvXC1MrCBuKKA40IGZisqDiqIcuZICkKJY31eXxU/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBOAuYxghdV8fk04WOy4QIw8mYxAuoTE7vt21psGEaKgXmxWdgIKRsUpTYco0S3x5z5FrUVI3D3V6xWmvOEH-c8n2anFwex3nVqytc9IzjgUTyuq7tDFgII_9V0WlQm4Uen0Q9g=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/Nzk4NTI0MzI1MTg0/details",
+      "creationTime": "2025-08-14T19:53:02.291Z",
+      "updateTime": "2025-08-14T19:53:08.035Z",
+      "creatorUserId": "103459931655688093646",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "795016487812",
+      "title": "Lecture 1",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "1buyiparIYFopIdkqsegq0JynU39Dl_YQJf-YjIV70Lo",
+              "title": "Lecture 1: Principles of Information Security",
+              "alternateLink": "https://docs.google.com/presentation/d/1buyiparIYFopIdkqsegq0JynU39Dl_YQJf-YjIV70Lo/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBOL59oWg2EPne4rxvLyXtCd-29DG2GUpFQl6vZGSazVmwn6W7ueevVrEiYgTp_GeKZg2REAoogEK6OQgyD9lzJpNj8y4SO_4PzE2Mzmd89UqIcb_LsJeJNHkpWQ8ZTOri612D4=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/Nzk1MDE2NDg3ODEy/details",
+      "creationTime": "2025-08-08T02:21:32.162Z",
+      "updateTime": "2025-08-08T02:21:50.361Z",
+      "creatorUserId": "103459931655688093646",
+      "topicId": "773889164883"
+    },
+    {
+      "courseId": "791077055722",
+      "id": "791077927496",
+      "title": "Syllabus",
+      "materials": [
+        {
+          "driveFile": {
+            "driveFile": {
+              "id": "14lUg29Qtya15iwvYON10tCidbHkYzdpag7DXytC4Bp8",
+              "title": "325-25-1-syllabus",
+              "alternateLink": "https://docs.google.com/document/d/14lUg29Qtya15iwvYON10tCidbHkYzdpag7DXytC4Bp8/edit?usp=drive_web",
+              "thumbnailUrl": "https://lh3.google.com/drive-storage/AJQWtBMPgFKiVpV41wKPWpO-XWmmQLGDBlWuuMLYZN9BjPnlzz8PqrrzFIV1j-52a9MwPEvPugvkHLkgRisYcHB2vSatNHJxKuQJmLfLNpgmdZU9CmXbPdhN0Jw9Zb0RgA-1ywd4tMg=s200"
+            },
+            "shareMode": "VIEW"
+          }
+        }
+      ],
+      "state": "PUBLISHED",
+      "alternateLink": "https://classroom.google.com/c/NzkxMDc3MDU1NzIy/m/NzkxMDc3OTI3NDk2/details",
+      "creationTime": "2025-08-05T09:42:12.325Z",
+      "updateTime": "2025-08-05T09:42:44.522Z",
+      "creatorUserId": "109565533686009791405",
+      "topicId": "794896827882"
+    }
   ]
 }

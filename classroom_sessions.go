@@ -8,6 +8,9 @@ import (
 
 type ClassroomSource interface {
 	GetCourseList() []list.Item
+	GetCourseAnnoucements(courseId string) []list.Item
+	GetCourseMaterials(courseId string) []list.Item
+	GetCourseWorks(courseId string) []list.Item
 }
 
 type ClassroomSessionModel struct {
@@ -34,6 +37,9 @@ func (cs *ClassroomSessionModel) RefreshCourseList() tea.Cmd {
 func (cs *ClassroomSessionModel) IsLoading() bool         { return cs.loading }
 func (cs *ClassroomSessionModel) SetLoading(loading bool) { cs.loading = loading }
 
+// ============================================
+// Implements tea.Model interface
+// ============================================
 func (cs *ClassroomSessionModel) Init() tea.Cmd {
 	return cs.RefreshCourseList()
 }

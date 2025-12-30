@@ -39,12 +39,14 @@ type SelectableModel interface {
 // ClassRoomModel orchestrates the course list pane and detail pane
 type ClassRoomModel struct {
 	// Pane management
-	source    ClassroomSource
-	selectPane int
-	paneList   map[int]SelectableModel
-	width      int
-	height     int
-	coureseLoaded bool
+	source         ClassroomSource
+	selectPane     int
+	paneList       map[int]SelectableModel
+	width          int
+	height         int
+	coureseLoaded  bool
+	postDetail     *PostDetailModel
+	showPostDetail bool
 }
 
 // getCourseListPane returns typed access to the course list pane
@@ -56,10 +58,11 @@ func NewClassRoomModel(source ClassroomSource) *ClassRoomModel {
 	courseListPane := NewCourseListPane("Courses")
 
 	m := &ClassRoomModel{
-		source:    source,
-		selectPane: CourseListPaneID,
-		paneList:   make(map[int]SelectableModel),
+		source:        source,
+		selectPane:    CourseListPaneID,
+		paneList:      make(map[int]SelectableModel),
 		coureseLoaded: false,
+		postDetail:    NewPostDetailModel(),
 	}
 
 	m.paneList[CourseListPaneID] = courseListPane
@@ -81,6 +84,9 @@ func (m *ClassRoomModel) GetSelectedCourse() *CourseItem {
 	return m.getCourseListPane().GetSelectedCourse()
 }
 
+// ============================================
+// Implements tea.Model interface
+// ============================================
 func (m *ClassRoomModel) Init() tea.Cmd { return nil }
 
 func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
@@ -92,6 +98,7 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		listWidth := int(float64(msg.Width)*CourseListPaneWidthRatio + 2)
 
 		courseListPane.SetSize(listWidth, msg.Height-DetailPaneTopOffset)
+		m.postDetail.Update(msg)
 
 		// Resize all CoursePostLists
 		for _, item := range courseListPane.Items() {
@@ -104,13 +111,13 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 
 	case SetTabDataMsg:
-		
+
 		if courseItem := m.GetSelectedCourse(); courseItem != nil && courseItem.ClassIDChecked(msg.CourseID) {
 			_, cmd := courseItem.CoursePostListModel.Update(msg)
 			return m, cmd
 		}
 
-		for _, course := range courseListPane.Items() { 
+		for _, course := range courseListPane.Items() {
 			if courseItem, ok := course.(*CourseItem); ok && courseItem.ClassIDChecked(msg.CourseID) {
 				if courseItem.CoursePostListModel != nil {
 					// Route to the specific tab's list
@@ -122,6 +129,15 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 		return m, nil
 
+	case ShowPostDetailMsg:
+		m.showPostDetail = true
+		m.postDetail.SetPostInfo(msg.postInfo)
+		return m, nil
+
+	case CloseDetailMsg:
+		m.showPostDetail = false
+		return m, nil
+
 	case tea.KeyMsg:
 		switch {
 		case key.Matches(msg, keys.NextTab):
@@ -131,11 +147,19 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	}
 	cmds := []tea.Cmd{}
 
+	if m.showPostDetail {
+		updatedDetail, cmd := m.postDetail.Update(msg)
+		m.postDetail = updatedDetail.(*PostDetailModel)
+		return m, cmd
+	}
+
 	// Update course list pane and reassign to paneList
-	updatedPane, cmd := m.paneList[m.selectPane].Update(msg)
-	cmds = append(cmds, cmd)
-	m.paneList[m.selectPane] = updatedPane.(SelectableModel)
-	
+	if pane, exists := m.paneList[m.selectPane]; exists {
+		updatedPane, cmd := pane.Update(msg)
+		cmds = append(cmds, cmd)
+		m.paneList[m.selectPane] = updatedPane.(SelectableModel)
+	}
+
 	// Update pane list with current detail pane
 	if selected := m.GetSelectedCourse(); selected != nil && selected.CoursePostListModel != nil {
 		if !selected.IsFetched() {
@@ -150,6 +174,11 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m *ClassRoomModel) View() string {
+
+	if m.showPostDetail && m.postDetail != nil {
+		return m.postDetail.View()
+	}
+
 	// Apply select/unselect styles to panes
 	for i, pane := range m.paneList {
 		if i == m.selectPane {
@@ -179,12 +208,14 @@ func (m *ClassRoomModel) View() string {
 	var detailView string
 	if selectedCourse != nil && selectedCourse.CoursePostListModel != nil {
 		detailView = selectedCourse.View()
-	} else {
+	} else {	
 		detailView = "No Course Selected"
 	}
 
 	detailView = detailStyle.Render(detailView)
 	courseListView := listStyle.Render(courseListPane.View())
 
-	return lipgloss.JoinHorizontal(lipgloss.Top, courseListView, detailView)
+	content := lipgloss.JoinHorizontal(lipgloss.Top, courseListView, detailView)
+
+	return content
 }

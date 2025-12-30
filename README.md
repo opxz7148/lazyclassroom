@@ -35,6 +35,7 @@ go build -o lazyclassroom
 ```
 
 **Limitations**
+- **Actual API call are under development** Right now program still under development and working only with mock data not actual Google API
 - **No file uploads or submissions:** Google does not allow attaching files or submitting coursework via the Classroom API, so this app focuses on viewing and downloading only.
 - Features depend on the backing `ClassroomSource`; using a mock source will limit available data.
 

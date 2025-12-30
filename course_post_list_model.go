@@ -40,9 +40,9 @@ func NewCoursePostListModel(CourseID string) *CoursePostListModel {
 
 	return &CoursePostListModel{
 		PostTabList: []list.Model{
-			NewPlainTabListModel(tabsList[AnnouncementTab]),
-			NewPlainTabListModel(tabsList[MaterialTab]),
-			NewPlainTabListModel(tabsList[CourseWorkTab]),
+			NewPostListModel(tabsList[AnnouncementTab]),
+			NewPostListModel(tabsList[MaterialTab]),
+			NewPostListModel(tabsList[CourseWorkTab]),
 		},
 		SelectedTab:      AnnouncementTab,
 		Tabs:             tabsList,
@@ -144,8 +144,9 @@ func (cplm *CoursePostListModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		}
 	}
 
-	cplm.PostTabList[cplm.SelectedTab], _ = cplm.PostTabList[cplm.SelectedTab].Update(msg)
-	return cplm, nil
+	var cmd tea.Cmd
+	cplm.PostTabList[cplm.SelectedTab], cmd = cplm.PostTabList[cplm.SelectedTab].Update(msg)
+	return cplm, cmd
 }
 
 func (cplm *CoursePostListModel) View() string {
@@ -195,12 +196,10 @@ func (cplm *CoursePostListModel) View() string {
 	return doc.String()
 }
 
-func NewPlainTabListModel(title string) list.Model {
-	delegate := list.NewDefaultDelegate()
+func NewPostListModel(title string) list.Model {
+	delegate := newPostListDelegate()
 	plainList := list.New([]list.Item{}, delegate, 0, 0)
 	plainList.Title = title
-	// plainList.SetShowStatusBar(false)
-	// plainList.SetShowHelp(false)
 	plainList.SetShowTitle(false)
 	plainList.SetShowPagination(false)
 	return plainList

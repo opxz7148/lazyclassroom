@@ -1,5 +1,5 @@
 # Lazyclassroom
-TUI application for inspecting Google Classroom from terminal
+TUI application for inspecting Google Classroom directly from terminal
 
 Frustrated with Google Classroom’s sluggish, complex UI? To download a material, you often need to open the browser and click through multiple pages to find what you need. lazyclassroom can help you
 

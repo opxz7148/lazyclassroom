@@ -1,10 +1,34 @@
 package main
 
 import (
+	"fmt"
+	"os"
+	"os/exec"
+	"runtime/debug"
+
 	tea "github.com/charmbracelet/bubbletea"
 )
 
 func main() {
+	// Always restore terminal on exit
+	defer func() {
+		if r := recover(); r != nil {
+			// Run reset command to fully restore terminal
+			cmd := exec.Command("reset")
+			cmd.Stdin = os.Stdin
+			cmd.Stdout = os.Stdout
+			cmd.Stderr = os.Stderr
+			cmd.Run() // Ignore errors
+
+			// Print panic info after terminal is restored
+			fmt.Fprintf(os.Stderr, "\n=== PANIC ===\n")
+			fmt.Fprintf(os.Stderr, "Error: %v\n\n", r)
+			fmt.Fprintf(os.Stderr, "Stack Trace:\n%s\n", debug.Stack())
+
+			os.Exit(1)
+		}
+	}()
+
 	mockSource, err := NewMockClassroomSourceFromJSON("mockCourse.json")
 	if err != nil {
 		panic(err)

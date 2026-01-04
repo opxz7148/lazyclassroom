@@ -19,8 +19,8 @@ type CourseItem struct {
 func (ci *CourseItem) FilterValue() string { return ci.Name }
 func (ci *CourseItem) Title() string       { return ci.Name }
 func (ci *CourseItem) Description() string { return ci.Section }
-func (ci *CourseItem) InitializeCoursePosts() {
-	ci.CoursePostListModel = NewCoursePostListModel(ci.ClassRoomId)
+func (ci *CourseItem) InitializeCoursePosts(source ClassroomSource) {
+	ci.CoursePostListModel = NewCoursePostListModel(ci.ClassRoomId, source)
 	ci.fetched = false
 }
 

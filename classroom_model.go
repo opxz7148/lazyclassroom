@@ -136,15 +136,15 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.postDetail.Update(msg)
 		m.sizeAllCoursePostLists()
 
-	case SetTabDataMsg:
+	case RouteAblePostListMsg:
 
-		if courseItem := m.GetSelectedCourse(); courseItem != nil && courseItem.ClassIDChecked(msg.CourseID) {
+		if courseItem := m.GetSelectedCourse(); courseItem != nil && courseItem.ClassIDChecked(msg.GetCourseID()) {
 			_, cmd := courseItem.CoursePostListModel.Update(msg)
 			return m, cmd
 		}
 
 		for _, course := range courseListPane.Items() {
-			if courseItem, ok := course.(*CourseItem); ok && courseItem.ClassIDChecked(msg.CourseID) {
+			if courseItem, ok := course.(*CourseItem); ok && courseItem.ClassIDChecked(msg.GetCourseID()) {
 				if courseItem.CoursePostListModel != nil {
 					// Route to the specific tab's list
 					_, cmd := courseItem.Update(msg)
@@ -158,20 +158,30 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case SetCourseListMsg:
 		m.coureseLoaded = true
 
+		cmds := []tea.Cmd{}
+		
+		// Sent message for set CourseListPane filter state
 		cmd := m.getCourseListPane().SetItems(msg.CourseItems)
+		if cmd != nil {
+			cmds = append(cmds, func() tea.Msg {
+				return CourseListLoadMsg{originalMsg: cmd()}
+			})
+		}
+
+		selectedCourse := m.GetSelectedCourse()
+
+		// Sent msg to run a fetching selected course posts if any
+		if selectedCourse != nil && selectedCourse.CoursePostListModel != nil {
+			cmds = append(cmds, selectedCourse.FetchPostData())
+			m.paneList[CoursePostPaneID] = selectedCourse.CoursePostListModel
+		}
 
 		// Size all CoursePostLists after setting items
 		m.sizeAllCoursePostLists()
 
-		// If cmd is nil, items are set but no further command needed
-		if cmd == nil {
-			return m, nil
-		}
 
 		// Wrap the command to handle it later
-		return m, func() tea.Msg {
-			return CourseListLoadMsg{originalMsg: cmd()}
-		}
+		return m, tea.Batch(cmds...)
 
 	case CourseListLoadMsg:
 		updatedCourseList, cmdFromList := m.getCourseListPane().Update(msg.originalMsg)
@@ -214,13 +224,7 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 	// Update pane list with current detail pane
 	if selected := m.GetSelectedCourse(); selected != nil && selected.CoursePostListModel != nil {
-		if !selected.IsFetched() {
-			announcements := m.source.GetCourseAnnoucements(selected.ClassRoomId)
-			materials := m.source.GetCourseMaterials(selected.ClassRoomId)
-			courseWorks := m.source.GetCourseWorks(selected.ClassRoomId)
-			cmds = append(cmds, selected.InsertCoursePosts(announcements, materials, courseWorks))
-		}
-		m.paneList[CoursePostPaneID] = selected
+		cmds = append(cmds, selected.FetchPostData())
 	}
 	return m, tea.Batch(cmds...)
 }

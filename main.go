@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"os/exec"
 	"runtime/debug"
@@ -10,6 +11,13 @@ import (
 )
 
 func main() {
+	// Setup debug logging
+	f, err := tea.LogToFile("debug.log", "debug")
+	if err != nil {
+		panic(err)
+	}
+	defer f.Close()
+
 	// Always restore terminal on exit
 	defer func() {
 		if r := recover(); r != nil {
@@ -36,6 +44,7 @@ func main() {
 
 	classroomSession := NewClassroomSession(mockSource)
 
+	log.Println("🚀 Starting application...")
 	p := tea.NewProgram(classroomSession, tea.WithAltScreen())
 	if _, err := p.Run(); err != nil {
 		panic(err)

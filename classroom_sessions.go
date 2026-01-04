@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+
 	"github.com/charmbracelet/bubbles/key"
 	"github.com/charmbracelet/bubbles/list"
 	tea "github.com/charmbracelet/bubbletea"
@@ -40,6 +42,8 @@ func (cs *ClassroomSessionModel) Init() tea.Cmd {
 }
 
 func (cs *ClassroomSessionModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+	log.Printf("📨 Message: %T", msg)
+	
 	// Handle app-level keys (quit, future: auth, modals)
 	switch msg := msg.(type) {
 	case tea.KeyMsg:

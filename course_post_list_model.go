@@ -22,13 +22,15 @@ type CoursePostListModel struct {
 	Tabs             []string
 	width            int
 	height           int
+	postFetched      bool
+	source           ClassroomSource
 	style            lipgloss.Style
 	activeTabStyle   lipgloss.Style
 	inactiveTabStyle lipgloss.Style
 	windowStyle      lipgloss.Style
 }
 
-func NewCoursePostListModel(CourseID string) *CoursePostListModel {
+func NewCoursePostListModel(CourseID string, source ClassroomSource) *CoursePostListModel {
 
 	tabsList := []string{"Announcements", "Materials", "Course Works"}
 
@@ -46,6 +48,9 @@ func NewCoursePostListModel(CourseID string) *CoursePostListModel {
 		},
 		SelectedTab:      AnnouncementTab,
 		Tabs:             tabsList,
+		CourseID:         CourseID,
+		source:           source,
+		postFetched:      false,
 		inactiveTabStyle: inactiveTabStyle,
 		activeTabStyle: inactiveTabStyle.
 			Border(activeTabBorder, true),
@@ -64,6 +69,65 @@ func (cplm *CoursePostListModel) SetBorderColor(color lipgloss.TerminalColor) {
 	cplm.inactiveTabStyle = cplm.inactiveTabStyle.BorderForeground(color)
 	cplm.activeTabStyle = cplm.activeTabStyle.BorderForeground(color)
 	cplm.windowStyle = cplm.windowStyle.BorderForeground(color)
+}
+
+type RouteAblePostListMsg interface{ GetCourseID() string }
+
+type PostListModelMsgCommon struct {
+	CourseID string
+	TabIndex int
+}
+
+func (plm PostListModelMsgCommon) GetCourseID() string { return plm.CourseID }
+
+type SetTabDataMsg struct {
+	PostListModelMsgCommon
+	UpdatedItem []list.Item
+}
+
+type AfterSetTabDataMsg struct {
+	PostListModelMsgCommon
+	OriginalMsg tea.Msg
+}
+
+func (cplm *CoursePostListModel) FetchPostData() tea.Cmd {
+	if cplm.postFetched {
+		return nil
+	}
+
+	announcementsCmd := func() tea.Msg {
+		items := cplm.source.GetCourseAnnoucements(cplm.CourseID)
+		return SetTabDataMsg{
+			PostListModelMsgCommon: PostListModelMsgCommon{
+				CourseID: cplm.CourseID,
+				TabIndex: AnnouncementTab,
+			},
+			UpdatedItem: items,
+		}
+	}
+	materialsCmd := func() tea.Msg {
+		items := cplm.source.GetCourseMaterials(cplm.CourseID)
+		return SetTabDataMsg{
+			PostListModelMsgCommon: PostListModelMsgCommon{
+				CourseID: cplm.CourseID,
+				TabIndex: MaterialTab,
+			},
+			UpdatedItem: items,
+		}
+	}
+	courseWorksCmd := func() tea.Msg {
+		items := cplm.source.GetCourseWorks(cplm.CourseID)
+		return SetTabDataMsg{
+			PostListModelMsgCommon: PostListModelMsgCommon{
+				CourseID: cplm.CourseID,
+				TabIndex: CourseWorkTab,
+			},
+			UpdatedItem: items,
+		}
+	}
+
+	cplm.postFetched = true
+	return tea.Batch(announcementsCmd, materialsCmd, courseWorksCmd)
 }
 
 // ============================================
@@ -89,12 +153,6 @@ func (cplm *CoursePostListModel) SetSize(width, height int) {
 	}
 }
 
-type SetTabDataMsg struct {
-	CourseID    string
-	TabIndex    int
-	OriginalMsg tea.Msg
-}
-
 func (cplm *CoursePostListModel) SetTabData(tabIndex int, items []list.Item) tea.Cmd {
 	if tabIndex < 0 || tabIndex >= len(cplm.PostTabList) {
 		return nil
@@ -108,10 +166,12 @@ func (cplm *CoursePostListModel) SetTabData(tabIndex int, items []list.Item) tea
 
 	return func() tea.Msg {
 		msg := cmd()
-		return SetTabDataMsg{
-			TabIndex:    tabIndex,
+		return AfterSetTabDataMsg{
 			OriginalMsg: msg,
-			CourseID:    cplm.CourseID,
+			PostListModelMsgCommon: PostListModelMsgCommon{
+				CourseID: cplm.CourseID,
+				TabIndex: tabIndex,
+			},
 		}
 	}
 }
@@ -119,11 +179,15 @@ func (cplm *CoursePostListModel) SetTabData(tabIndex int, items []list.Item) tea
 // ============================================
 // Implements tea.Model interface
 // ============================================
-func (cplm *CoursePostListModel) Init() tea.Cmd { return nil }
+func (cplm *CoursePostListModel) Init() tea.Cmd { return cplm.FetchPostData() }
 
 func (cplm *CoursePostListModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case SetTabDataMsg:
+		var cmd tea.Cmd
+		cmd = cplm.SetTabData(msg.TabIndex, msg.UpdatedItem)
+		return cplm, cmd
+	case AfterSetTabDataMsg:
 		var cmd tea.Cmd
 		cplm.PostTabList[msg.TabIndex], cmd = cplm.PostTabList[msg.TabIndex].Update(msg.OriginalMsg)
 		return cplm, cmd

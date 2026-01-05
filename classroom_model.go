@@ -26,22 +26,11 @@ type ListSelectedState interface {
 	UnselectStyleSet()
 }
 
-type Selectable interface {
-	Select()
-	Unselect()
-}
-
-type SelectableModel interface {
-	Selectable
-	tea.Model
-}
-
 // ClassRoomModel orchestrates the course list pane and detail pane
 type ClassRoomModel struct {
 	// Pane management
 	source         ClassroomSource
-	selectPane     int
-	paneList       map[int]SelectableModel
+	paneManager    *PaneManager
 	width          int
 	height         int
 	coureseLoaded  bool
@@ -51,7 +40,8 @@ type ClassRoomModel struct {
 
 // getCourseListPane returns typed access to the course list pane
 func (m *ClassRoomModel) getCourseListPane() *CourseListPane {
-	return m.paneList[CourseListPaneID].(*CourseListPane)
+	pane, _ := m.paneManager.GetPane(CourseListPaneID)
+	return pane.(*CourseListPane)
 }
 
 func NewClassRoomModel(source ClassroomSource) *ClassRoomModel {
@@ -59,13 +49,12 @@ func NewClassRoomModel(source ClassroomSource) *ClassRoomModel {
 
 	m := &ClassRoomModel{
 		source:        source,
-		selectPane:    CourseListPaneID,
-		paneList:      make(map[int]SelectableModel),
+		paneManager:   NewPaneManager(),
 		coureseLoaded: false,
 		postDetail:    NewPostDetailModel(),
 	}
 
-	m.paneList[CourseListPaneID] = courseListPane
+	m.paneManager.SetPane(CourseListPaneID, courseListPane)
 
 	return m
 }
@@ -81,8 +70,27 @@ func (m *ClassRoomModel) SetItems(items []list.Item) tea.Cmd {
 	}
 }
 
-// Pane management
-func (m *ClassRoomModel) NextPane() { m.selectPane = (m.selectPane + 1) % 2 }
+// RouteMsg routes messages to the appropriate course post list
+func (m *ClassRoomModel) RouteMsg(msg RouteAblePostListMsg) tea.Cmd {
+	courseListPane := m.getCourseListPane()
+
+	if courseItem := m.GetSelectedCourse(); courseItem != nil && courseItem.ClassIDChecked(msg.GetCourseID()) {
+		_, cmd := courseItem.CoursePostListModel.Update(msg)
+		return cmd
+	}
+
+	for _, course := range courseListPane.Items() {
+		if courseItem, ok := course.(*CourseItem); ok && courseItem.ClassIDChecked(msg.GetCourseID()) {
+			if courseItem.CoursePostListModel != nil {
+				// Route to the specific tab's list
+				_, cmd := courseItem.Update(msg)
+				return cmd
+			}
+			break
+		}
+	}
+	return nil
+}
 
 // GetSelectedCourse delegates to the course list pane
 func (m *ClassRoomModel) GetSelectedCourse() *CourseItem {
@@ -112,17 +120,18 @@ type SetCourseListMsg struct {
 	CourseItems []list.Item
 }
 
-func (m *ClassRoomModel) fetchCourseList() tea.Msg {
-	courseList := m.source.GetCourseList()
-	return SetCourseListMsg{CourseItems: courseList}
+func (m *ClassRoomModel) fetchCourseList() tea.Cmd {
+
+	return func () tea.Msg {
+		courseList := m.source.GetCourseList()
+		return SetCourseListMsg{CourseItems: courseList}
+	}
 }
 
 // ============================================
 // Implements tea.Model interface
 // ============================================
-func (m *ClassRoomModel) Init() tea.Cmd {
-	return m.fetchCourseList
-}
+func (m *ClassRoomModel) Init() tea.Cmd { return m.fetchCourseList() }
 
 func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	courseListPane := m.getCourseListPane()
@@ -137,23 +146,8 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.sizeAllCoursePostLists()
 
 	case RouteAblePostListMsg:
-
-		if courseItem := m.GetSelectedCourse(); courseItem != nil && courseItem.ClassIDChecked(msg.GetCourseID()) {
-			_, cmd := courseItem.CoursePostListModel.Update(msg)
-			return m, cmd
-		}
-
-		for _, course := range courseListPane.Items() {
-			if courseItem, ok := course.(*CourseItem); ok && courseItem.ClassIDChecked(msg.GetCourseID()) {
-				if courseItem.CoursePostListModel != nil {
-					// Route to the specific tab's list
-					_, cmd := courseItem.Update(msg)
-					return m, cmd
-				}
-				break
-			}
-		}
-		return m, nil
+		cmd := m.RouteMsg(msg)
+		return m, cmd
 
 	case SetCourseListMsg:
 		m.coureseLoaded = true
@@ -173,7 +167,7 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		// Sent msg to run a fetching selected course posts if any
 		if selectedCourse != nil && selectedCourse.CoursePostListModel != nil {
 			cmds = append(cmds, selectedCourse.FetchPostData())
-			m.paneList[CoursePostPaneID] = selectedCourse.CoursePostListModel
+			m.paneManager.SetPane(CoursePostPaneID, selectedCourse.CoursePostListModel)
 		}
 
 		// Size all CoursePostLists after setting items
@@ -186,7 +180,7 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case CourseListLoadMsg:
 		updatedCourseList, cmdFromList := m.getCourseListPane().Update(msg.originalMsg)
 		if updatedPane, ok := updatedCourseList.(*CourseListPane); ok {
-			m.paneList[CourseListPaneID] = updatedPane
+			m.paneManager.SetPane(CourseListPaneID, updatedPane)
 		}
 
 		return m, cmdFromList
@@ -203,7 +197,7 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	case tea.KeyMsg:
 		switch {
 		case key.Matches(msg, keys.NextTab):
-			m.NextPane()
+			m.paneManager.NextPane()
 			return m, nil
 		}
 	}
@@ -216,16 +210,17 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	}
 
 	// Update course list pane and reassign to paneList
-	if pane, exists := m.paneList[m.selectPane]; exists {
-		updatedPane, cmd := pane.Update(msg)
-		cmds = append(cmds, cmd)
-		m.paneList[m.selectPane] = updatedPane.(SelectableModel)
-	}
+	cmd := m.paneManager.Update(msg)
+	cmds = append(cmds, cmd)
+
+	selected := m.GetSelectedCourse()
 
 	// Update pane list with current detail pane
-	if selected := m.GetSelectedCourse(); selected != nil && selected.CoursePostListModel != nil {
+	if selected != nil && selected.CoursePostListModel != nil {
+		m.paneManager.SetPane(CoursePostPaneID, selected.CoursePostListModel)
 		cmds = append(cmds, selected.FetchPostData())
 	}
+
 	return m, tea.Batch(cmds...)
 }
 
@@ -236,13 +231,7 @@ func (m *ClassRoomModel) View() string {
 	}
 
 	// Apply select/unselect styles to panes
-	for i, pane := range m.paneList {
-		if i == m.selectPane {
-			pane.Select()
-		} else {
-			pane.Unselect()
-		}
-	}
+	m.paneManager.UpdateSelected()
 
 	courseListPane := m.getCourseListPane()
 	listWidth := courseListPane.Width()

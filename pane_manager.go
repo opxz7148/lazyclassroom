@@ -18,19 +18,21 @@ type SelectableModel interface {
 type PaneManager struct {
 	paneList   map[int]SelectableModel
 	selectPane int
+	numPanes   int
 }
 
 // NewPaneManager creates a new PaneManager
-func NewPaneManager() *PaneManager {
+func NewPaneManager(numPanes int) *PaneManager {
 	return &PaneManager{
 		paneList:   make(map[int]SelectableModel),
 		selectPane: CourseListPaneID,
+		numPanes:   numPanes,
 	}
 }
 
 // NextPane switches to the next pane
 func (pm *PaneManager) NextPane() {
-	pm.selectPane = (pm.selectPane + 1) % 2
+	pm.selectPane = (pm.selectPane + 1) % pm.numPanes
 }
 
 // GetPane returns the pane at the given index
@@ -41,6 +43,9 @@ func (pm *PaneManager) GetPane(paneID int) (SelectableModel, bool) {
 
 // SetPane sets the pane at the given index
 func (pm *PaneManager) SetPane(paneID int, pane SelectableModel) {
+	if paneID < 0 || paneID >= pm.numPanes {
+		return
+	}
 	pm.paneList[paneID] = pane
 }
 

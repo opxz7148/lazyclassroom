@@ -49,7 +49,7 @@ func NewClassRoomModel(source ClassroomSource) *ClassRoomModel {
 
 	m := &ClassRoomModel{
 		source:        source,
-		paneManager:   NewPaneManager(),
+		paneManager:   NewPaneManager(2),
 		coureseLoaded: false,
 		postDetail:    NewPostDetailModel(),
 	}
@@ -122,7 +122,7 @@ type SetCourseListMsg struct {
 
 func (m *ClassRoomModel) fetchCourseList() tea.Cmd {
 
-	return func () tea.Msg {
+	return func() tea.Msg {
 		courseList := m.source.GetCourseList()
 		return SetCourseListMsg{CourseItems: courseList}
 	}
@@ -153,7 +153,7 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		m.coureseLoaded = true
 
 		cmds := []tea.Cmd{}
-		
+
 		// Sent message for set CourseListPane filter state
 		cmd := m.getCourseListPane().SetItems(msg.CourseItems)
 		if cmd != nil {
@@ -172,7 +172,6 @@ func (m *ClassRoomModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 		// Size all CoursePostLists after setting items
 		m.sizeAllCoursePostLists()
-
 
 		// Wrap the command to handle it later
 		return m, tea.Batch(cmds...)
